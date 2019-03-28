@@ -4,12 +4,9 @@ exports.up = function(knex, Promise) {
         table.increments('id').unsigned().primary();
         table.bigInteger('photographers_id').references('photographers.id');
         table.bigInteger('influencers_id').references('influencers.id')
-
-    })
-  
+    }) 
 };
 
 exports.down = function(knex, Promise) {
-    return knex.schema.dropTableIfExists('requests');
-  
+    return knex.schema.dropTableIfExists('requests'); 
 };
