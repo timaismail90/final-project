@@ -1,8 +1,6 @@
 .upload-page {
-  background-color: #ffffff;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
 }
 
 .upload {
@@ -10,10 +8,6 @@
   font-family: 'Nunito', sans-serif;
   margin-top:30%;
   margin-bottom: 15%;
-}
-
-.background-upload {
-  margin-left: 25%;
 }
 
 .styles {
