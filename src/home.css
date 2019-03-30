@@ -1,0 +1,19 @@
+.title {
+  font-family: 'Playfair Display SC', serif;
+  font-size: 90px;
+  margin-top:10rem;
+}
+
+.subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 25px;
+  margin-bottom: 3rem
+}
+
+.btn-lg {
+  margin-left: 8rem;
+}
+
+.homePhoto {
+  margin-left: 25%;
+}

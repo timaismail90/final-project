@@ -1,0 +1,22 @@
+.upload-page {
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.upload {
+  font-size: 60px;
+  font-family: 'Nunito', sans-serif;
+  margin-top:30%;
+  margin-bottom: 15%;
+}
+
+.background-upload {
+  margin-left: 25%;
+}
+
+.styles {
+   font-family: 'Playfair Display SC', serif !important;
+   text-decoration: underline;
+}
