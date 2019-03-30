@@ -1,10 +1,6 @@
 var elasticsearch=require('elasticsearch');
-
+require('dotenv').config();
 var client=new elasticsearch.Client( {
-  hosts: [
-   'https://timaismail:lighthouseLabs@portal3474-4.final-project.1031860671.composedb.com:33005/',
-   'https://timaismail:lighthouseLabs@portal3474-4.final-project.1031860671.composedb.com:33005/',
-
-  ]
+  hosts: [process.env.DB_PATHONE, process.env.DB_PATHTWO]
 });
 module.exports = client;
