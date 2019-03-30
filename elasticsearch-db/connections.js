@@ -7,4 +7,4 @@ var client=new elasticsearch.Client( {
 
   ]
 });
-module.exports = client;  
+module.exports = client;
