@@ -7,5 +7,16 @@
 
 .upload {
   font-size: 60px;
-  font-family: 'Playfair Display SC', serif;
+  font-family: 'Nunito', sans-serif;
+  margin-top:30%;
+  margin-bottom: 15%;
+}
+
+.background-upload {
+  margin-left: 25%;
+}
+
+.styles {
+   font-family: 'Playfair Display SC', serif !important;
+   text-decoration: underline;
 }

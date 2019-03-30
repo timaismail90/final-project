@@ -1,35 +1,19 @@
 .title {
   font-family: 'Playfair Display SC', serif;
   font-size: 90px;
-  margin-left: 8.5rem;
-  margin-top:15rem;
+  margin-top:10rem;
 }
 
 .subtitle {
   font-family: 'Nunito', sans-serif;
   font-size: 25px;
-  margin-left: 9.25rem;
-}
-
-.login {
-  border: 1px solid #eee;
-  box-shadow: 0 2px 2px #ccc;
-  width: 25%;
-  padding: 20px;
-  border-radius: 10px;
-  margin-left: 7.25rem;
-  margin-top: 2rem;
-
+  margin-bottom: 3rem
 }
 
 .btn-lg {
   margin-left: 8rem;
 }
 
-.home-page {
-
-  background-color: #ffffff;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.homePhoto {
+  margin-left: 25%;
 }

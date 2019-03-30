@@ -1,16 +1,20 @@
 import React from 'react';
 import '../home.css'
-import {Form, Row, Col, Button} from 'react-bootstrap';
+import {Form, Row, Col, Button, Container} from 'react-bootstrap';
+import backgroundHome from '../collabhomepage-copy.jpg';
 
 const Home = () => {
   return (
 
-      <div className="home-page">
+  <div>
+  <Container>
+    <Row>
+      <Col sm={4}>
 
         <h1 className="title"> COLLAB</h1>
         <h2 className="subtitle">Collaborate for the sake of art</h2>
 
-      <div className="login">
+
       <Form>
         <Form.Group as={Row} controlId="formPlaintextEmail">
         <Col>
@@ -29,9 +33,15 @@ const Home = () => {
       Login
       </Button>
 
-      </div>
-      <img src="../collabhomepage-copy.jpg" />
-      </div>
+      </Col>
+
+      <Col sm={8}>
+        <img className="homePhoto" src={backgroundHome} />
+      </Col>
+      </Row>
+    </Container>
+
+  </div>
   )
 };
 
