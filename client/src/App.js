@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import Loading from "./components/Loading"
 import Upload from "./components/Upload"
 import Error from "./components/Error"
+import Photographer from "./components/Photographer"
 
 class App extends Component {
   render() {
@@ -15,6 +16,7 @@ class App extends Component {
         <Route path="/" component={Home} exact />
         <Route path="/loading" component={Loading} />
         <Route path="/upload" component={Upload} />
+        <Route path="/photographer" component={Photographer} />
         <Route component={Error} />
       </Switch>
       </BrowserRouter>
