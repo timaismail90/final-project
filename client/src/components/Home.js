@@ -1,7 +1,7 @@
 import React from 'react';
 import '../home.css'
 import {Form, Row, Col, Button, Container} from 'react-bootstrap';
-import backgroundHome from '../collabhomepage-copy.jpg';
+import backgroundHome from '../collabhomepage2.jpg';
 
 const Home = () => {
   return (
@@ -29,7 +29,7 @@ const Home = () => {
       </Form.Group>
       </Form>
 
-      <Button variant="outline-success" size="lg">
+      <Button variant="outline-success" size="lg" className="loginButton">
       Login
       </Button>
 
