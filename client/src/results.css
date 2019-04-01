@@ -10,3 +10,18 @@ object-fit: cover;
 width: 100% !important;
 height: 450px !important;
 }
+
+.title-found {
+  font-family: 'Barlow', sans-serif;
+  text-align: center;
+  font-size: 45px;
+  padding: 5rem 5rem;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.col-sm {
+  padding-bottom: 2rem;
+}
