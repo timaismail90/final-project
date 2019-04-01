@@ -1,26 +1,31 @@
 import React from 'react';
 import '../requests.css';
-import backgroundUpload from '../collabupload-copy.jpg';
-import {Form, Row, Col, Container, Button} from 'react-bootstrap';
+import requestBackground from '../collabrequests.jpg';
+import {Row, Col, Container, Button, Card} from 'react-bootstrap';
 
 
 const Requests = () => {
   return (
-  <div className="upload-page">
+  <div>
 
-<Container>
-  <Row>
-    <Col sm={4}>
-      <p className="upload"> Which <span className="styles">styles</span> are you feeling today? </p>
-      <form action='/api/images' method="post" enctype="multipart/form-data">
-        <input type='file' name='image' className="upload-photo" />
-      </form>
-    </Col>
-    <Col sm={8}>
-      <img className="background-upload" src={backgroundUpload} />
-    </Col>
+  <Container>
+    <Row>
+      <Col sm={8}>
+        <Card>
+          <Card.Body>
+            <img className="request-photo" src="https://images.unsplash.com/profile-1541499455668-3a19737a038c?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" />
+            <h1 className="request-name">Amelia Clarke</h1>
+          </Card.Body>
+        </Card>
+      </Col>
+
+
+      <Col sm={4}>
+      <img className="background-requests" src={requestBackground} />
+      </Col>
     </Row>
   </Container>
+
   </div>
   );
 };

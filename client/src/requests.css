@@ -1,0 +1,16 @@
+.background-requests {
+  width: 100%;
+  padding-top: 30%;
+}
+
+.request-photo {
+  border-radius: 50%;
+  width: 150px;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.request-name {
+  font-family: 'Barlow', sans-serif;
+  font-size: 25px;
+}
