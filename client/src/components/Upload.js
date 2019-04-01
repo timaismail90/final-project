@@ -2,9 +2,38 @@ import React from 'react';
 import '../upload.css';
 import backgroundUpload from '../collabupload-copy.jpg';
 import {Form, Row, Col, Container, Button} from 'react-bootstrap';
+const axios = require("axios");
 
+class Upload extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state ={
+        file: null
+    };
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
+}
+onFormSubmit(e){
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('myImage',this.state.file);
+    const config = {
+        headers: {
+            'content-type': 'multipart/form-data'
+        }
+    };
+    axios.post("/upload",formData,config)
+        .then((response) => {
+            alert("The file is successfully uploaded");
+        }).catch((error) => {
+    });
 
-const Upload = () => {
+    
+  }
+  onChange(e) {
+    this.setState({file:e.target.files[0]});
+}
+  render() {
   return (
   <div className="upload-page">
 
@@ -12,8 +41,10 @@ const Upload = () => {
   <Row>
     <Col sm={4}>
       <p className="upload"> Which <span className="styles">styles</span> are you feeling today? </p>
-      <form action='/api/images' method="post" enctype="multipart/form-data">
-        <input type='file' name='image' className="upload-photo" />
+      <form onSubmit={this.onFormSubmit}>
+                <h1>File Upload</h1>
+                <input type="file" name="myImage" onChange= {this.onChange} />
+                <button type="submit">Upload</button>
       </form>
     </Col>
     <Col sm={8}>
@@ -23,6 +54,7 @@ const Upload = () => {
   </Container>
   </div>
   );
-};
+  }
+}
 
 export default Upload;

@@ -8,6 +8,7 @@
     "dotenv": "^7.0.0",
     "elasticsearch": "^15.4.1",
     "express": "^4.16.4",
+    "multer": "^1.4.1",
     "nodemon": "^1.18.10",
     "watson-developer-cloud": "^4.0.1"
   },
