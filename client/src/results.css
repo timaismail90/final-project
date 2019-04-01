@@ -1,0 +1,12 @@
+.result {
+  object-fit: cover;
+  width: 350px;
+  height: 350px;
+  padding: 10% 10%;
+}
+
+.w-100 {
+object-fit: cover;
+width: 100% !important;
+height: 450px !important;
+}

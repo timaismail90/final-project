@@ -6,6 +6,7 @@ import Loading from "./components/Loading"
 import Upload from "./components/Upload"
 import Error from "./components/Error"
 import Photographer from "./components/Photographer"
+import Results from "./components/Results"
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <Route path="/loading" component={Loading} />
         <Route path="/upload" component={Upload} />
         <Route path="/photographer" component={Photographer} />
+         <Route path="/results" component={Results} />
         <Route component={Error} />
       </Switch>
       </BrowserRouter>
