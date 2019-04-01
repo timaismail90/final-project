@@ -4,3 +4,24 @@
  height:350px;
  padding: 10% 10%;
 }
+
+.profile-photo {
+  border-radius: 50%;
+  width: 150px;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.photographer-profile {
+  text-align: center;
+}
+
+.photographer-name {
+  font-family: 'Nunito', sans-serif;
+  font-size: 25px;
+}
+
+.photographer-location {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+}

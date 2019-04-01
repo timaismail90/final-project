@@ -1,7 +1,7 @@
 import React from 'react';
 import '../home.css'
 import {Form, Row, Col, Button, Container} from 'react-bootstrap';
-import backgroundHome from '../collabhomepage2.jpg';
+import backgroundHome from '../collabhomepageanimated.gif';
 
 const Home = () => {
   return (
