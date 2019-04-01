@@ -22,8 +22,8 @@ module.exports = function () {
         console.log(err);
       } else {
         var labels = ""
-      res.images[0].classifiers[0].classes.forEach(obj => labels=+obj.class + " ")
-    console.log(labels)  
+      res.images[0].classifiers[0].classes.forEach(obj => labels=+obj.class)
+    console.log("label",labels)  
     }
     })
       )
