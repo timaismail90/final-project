@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../home.css'
 import {Form, Row, Col, Button, Container} from 'react-bootstrap';
 import backgroundHome from '../collabhomepageanimated.gif';

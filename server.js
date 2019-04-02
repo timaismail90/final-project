@@ -19,11 +19,13 @@ const upload = multer({
 }).single("myImage");
 
 
-app.post("/upload", function (req,res){
-    upload(req, res, (err) => {
+app.post("/upload",function (req,res){
+    upload(req, res, async (err) => {
         if(!err){
-            getLabels.vR(`./public/uploads/${req.file.originalname}`)
-           return res.sendStatus(200).end();
+            await getLabels.vR(`./public/uploads/${req.file.originalname}`,
+               (labels) => {
+                   res.send(labels)
+               })
         }
      })
 })
