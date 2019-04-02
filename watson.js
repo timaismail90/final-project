@@ -21,9 +21,8 @@ module.exports = function () {
         if (err) {
         console.log(err);
       } else {
-        var labels = ""
-      res.images[0].classifiers[0].classes.forEach(obj => labels=+obj.class)
-    console.log("label",labels)  
+      res.images[0].classifiers[0].classes.forEach(obj => console.log(obj.class))
+    
     }
     })
       )
