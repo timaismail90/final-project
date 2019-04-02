@@ -5,12 +5,27 @@
 
 .request-photo {
   border-radius: 50%;
-  width: 150px;
-  margin-top: 5%;
+  width: 80px;
+  margin-top: 2%;
   margin-bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+
 }
 
 .request-name {
   font-family: 'Barlow', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
+  display: inline;
+}
+
+.request-box {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 2px #ccc;
+  width: 90%;
+  border-radius: 10px;
 }
