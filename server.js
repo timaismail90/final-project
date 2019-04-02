@@ -27,7 +27,32 @@ app.post("/upload", function (req,res){
         }
      })
 })
+app.get("/:id/photographer", function(req,res){
+   console.log(req.params.id)
+   res.sendStatus(200)
+   // client.search({  
+   //    index: 'photographers',
+   //    type: 'user',
+   //    body: {
+   //      query: {
+   //        match: { "id": req.params.id }
+   //      },
+   //    }
+   //  },function (error, response,status) {
+   //      if (error){
+   //        console.log("search error: "+error)
+   //      }
+   //      else {
+   //        console.log("--- Response ---");
+   //        console.log(response);
+   //        console.log("--- Hits ---");
+   //        response.hits.hits.forEach(function(hit){
+   //          res.json(hit["_source"])
+   //        })
+   //      }
+   //  });
 
+})
 
 
 app.listen(port);
