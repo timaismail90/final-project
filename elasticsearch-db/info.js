@@ -25,7 +25,7 @@ var client = require('./connections.js');
     type: 'user',
     body: {
       query: {
-        match: { "keyWords": "\bfood|\btree|\beauty" }
+        match: { "keyWords": "\bfood|\btree|\bbeauty" }
       },
     }
   },function (error, response,status) {
