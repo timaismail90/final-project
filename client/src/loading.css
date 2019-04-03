@@ -10,13 +10,14 @@
 }
 
 .keywordTitle {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 25px;
   margin-bottom: 3rem
 }
 
 .keywordDetected {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   font-size: 15px;
   display: inline-block;
   margin: 10px;
@@ -25,4 +26,10 @@
   width: 200px;
   padding: 20px;
   border-radius: 10px;
+}
+
+.btn-lg {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 100px
 }

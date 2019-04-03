@@ -21,6 +21,9 @@ const Loading = () => {
      <Button variant="outline-success" size="lg">
       View Photographers!
      </Button>
+      <br/>
+      <br/>
+      <br/>
      </div>
 
     </div>

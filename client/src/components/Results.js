@@ -33,7 +33,7 @@ const Results = () => {
     </Carousel>
     </div>
 
-  <h2 className="title-found">Photographers Who Match</h2>
+  <h2 className="title-found"><span className="cursive-photographer">Photographers</span> Who Match</h2>
 
     <Container>
       <Row>

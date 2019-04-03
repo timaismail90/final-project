@@ -1,0 +1,60 @@
+.select-influencer {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.5;
+}
+
+.select-influencer:hover {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1.0;
+}
+
+.select-photographer {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.5;
+}
+
+.select-photographer:hover {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 1.0;
+}
+
+.begin-journey {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+}
+
+.description-photographer {
+  text-align: center;
+  margin-top: 5%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.description-influencer {
+  text-align: center;
+  margin-top: 5%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+}
+
+.journey {
+  font-family: 'Parisienne', cursive !important;
+}

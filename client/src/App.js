@@ -8,6 +8,7 @@ import Error from "./components/Error"
 import Photographer from "./components/Photographer"
 import Results from "./components/Results"
 import Requests from "./components/Requests"
+import Select from "./components/Select.js"
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
       <BrowserRouter>
       <Switch>
         <Route path="/" component={Home} exact />
+        <Route path="/select" component={Select} exact />
         <Route path="/loading" component={Loading} />
         <Route path="/upload" component={Upload} />
         <Route path="/photographer" component={Photographer} />

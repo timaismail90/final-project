@@ -5,12 +5,18 @@
 
 .upload {
   font-size: 60px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   margin-top:30%;
   margin-bottom: 15%;
 }
 
 .styles {
-   font-family: 'Playfair Display SC', serif !important;
+   font-family: 'Parisienne', cursive !important;
    text-decoration: underline;
+}
+.file-upload {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin-bottom: 5%;
 }
