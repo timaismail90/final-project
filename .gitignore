@@ -6,6 +6,7 @@ clients/node_modules/
 .pnp
 .pnp.js
 .env
+public/uploads
 # testing
 coverage/
 

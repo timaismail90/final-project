@@ -3,6 +3,9 @@ import '../upload.css';
 import backgroundUpload from '../collabupload-copy.jpg';
 import {Form, Row, Col, Container, Button} from 'react-bootstrap';
 const axios = require("axios");
+const elasticsearch = require('elasticsearch')
+
+
 
 class Upload extends React.Component {
   constructor(props) {
@@ -34,6 +37,7 @@ onFormSubmit(e){
   onChange(e) {
     this.setState({file:e.target.files[0]});
 }
+
   render() {
   return (
   <div className="upload-page">

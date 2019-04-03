@@ -17,7 +17,7 @@ var visualRecognition = new VisualRecognitionV3({
 module.exports = function () {
   return {
     vR: (image, completion) => {
-      var labels = []
+      var labels = ""
       return visualRecognition.classify(
                {images_file: fs.createReadStream(image)}, 
                function(err, res) {
@@ -25,7 +25,7 @@ module.exports = function () {
                   console.log(err);
                 } else {
                   res.images[0].classifiers[0].classes
-                    .forEach(obj => labels.push(obj.class));
+                    .forEach(obj => labels+=obj.class+" ");
                    completion(labels)
                 }
               })
