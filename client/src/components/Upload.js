@@ -24,6 +24,7 @@ onFormSubmit(e){
     };
     axios.post("/upload",formData,config)
         .then((response) => {
+          console.log(response.data)
             alert("The file is successfully uploaded");
         }).catch((error) => {
     });
