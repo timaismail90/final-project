@@ -28,7 +28,7 @@ onFormSubmit(e){
         }).catch((error) => {
     });
 
-    
+
   }
   onChange(e) {
     this.setState({file:e.target.files[0]});
@@ -42,7 +42,7 @@ onFormSubmit(e){
     <Col sm={4}>
       <p className="upload"> Which <span className="styles">styles</span> are you feeling today? </p>
       <form onSubmit={this.onFormSubmit}>
-                <h1>File Upload</h1>
+                <h1 className="file-upload">File Upload</h1>
                 <input type="file" name="myImage" onChange= {this.onChange} />
                 <button type="submit">Upload</button>
       </form>

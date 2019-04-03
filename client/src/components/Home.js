@@ -13,7 +13,7 @@ render () {
       <Row>
         <Col sm={4}>
 
-          <h1 className="title"> COLLAB</h1>
+          <h1 className="title">Collab&#174;</h1>
           <h2 className="subtitle">Collaborate for the sake of art</h2>
 
 

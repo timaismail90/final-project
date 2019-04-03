@@ -12,7 +12,8 @@ height: 450px !important;
 }
 
 .title-found {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   text-align: center;
   font-size: 45px;
   padding: 5rem 5rem;
@@ -24,4 +25,8 @@ height: 450px !important;
 
 .col-sm {
   padding-bottom: 2rem;
+}
+
+.cursive-photographer {
+  font-family: 'Parisienne', cursive !important;
 }
