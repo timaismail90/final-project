@@ -3,6 +3,7 @@ exports.up = function(knex, Promise) {
       table.increments('id').unasigned().primary();
       table.string('name');
       table.string('unsplash_API');
+      table.string('username');
       table.bigInteger('requests_id').references('requests.id');
     });
   };
