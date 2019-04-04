@@ -49,7 +49,11 @@ app.post("/upload",function (req,res){
                               array.push(hit["_source"])
                            }
                            })
-                           res.send(array)
+                           var object = {
+                              match: array,
+                              img:labels
+                           }
+                           res.send(object)
                          }
                      });
                })
