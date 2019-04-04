@@ -1,0 +1,91 @@
+.message-photo {
+  border-radius: 50%;
+  width: 50px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+.message-name {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  display: inline;
+  font-weight: 300;
+}
+
+.message-request {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 2%;
+  opacity: 0.5;
+}
+
+.message-request:hover {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  display: inline-block;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 2%;
+  opacity: 1.0;
+}
+.message-influencer {
+  background: #39ACFF;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  display: inline-block;
+  box-shadow: 0 2px 2px #ccc;
+  border-radius: 10px;
+  margin-top: 5%;
+  padding: 3% 3%;
+  color: white;
+}
+
+.message-photographer {
+  background: #00D949;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  display: inline-block;
+  box-shadow: 0 2px 2px #ccc;
+  border-radius: 10px;
+  margin-top: 5%;
+  padding: 3% 3%;
+  color:white;
+}
+
+.influencer-section {
+  text-align: left;
+}
+
+.photographer-section {
+  text-align: right;
+}
+
+.textarea {
+  border-top: 30px;
+  position: fixed;
+  bottom: 0;
+  width: 60%;
+}
+
+.your-connections {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    padding-top: 10%;
+    text-align: center;
+}
+
+.connections {
+  font-family: 'Parisienne', cursive;
+  font-size: 25px;
+}

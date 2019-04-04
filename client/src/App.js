@@ -9,6 +9,7 @@ import Photographer from "./components/Photographer"
 import Results from "./components/Results"
 import Requests from "./components/Requests"
 import Select from "./components/Select.js"
+import Messages from "./components/Messages.js"
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
         <Route path="/photographer" component={Photographer} />
         <Route path="/results" component={Results} />
         <Route path="/requests" component={Requests} />
+        <Route path="/messages" component={Messages} />
         <Route component={Error} />
       </Switch>
       </BrowserRouter>
