@@ -70,7 +70,14 @@ app.get("/:id/photographer", function(req,res){
   .where('id', req.params.id)
   .then((results) => {
     res.json(results);
+  })
+})
 
+app.get("/:id/influencer", function(req,res){
+  knex('influencer')
+  .where('id', req.params.id)
+  .then((results)=> {
+    res.json(results);
   })
 })
    
