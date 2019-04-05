@@ -16,7 +16,7 @@ class Upload extends React.Component {
     
 }
 onFormSubmit= (e) =>{
-  alert("onsubmit works");
+ 
     e.preventDefault();
     const formData = new FormData();
     formData.append('myImage',this.state.file);
