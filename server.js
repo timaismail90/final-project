@@ -1,5 +1,8 @@
-const client = require('./elasticsearch-db/connections.js');
+const ENV= process.env.ENV || "development";
 
+const client = require('./elasticsearch-db/connections.js');
+const knexConfig  = require("./knexfile");
+const knex= require("knex")(knexConfig[ENV]);
 const getLabels= require('./watson.js')()
 const express = require('express');
 const path = require('path');
@@ -63,24 +66,27 @@ app.post("/upload",function (req,res){
 
 
 app.get("/:id/photographer", function(req,res){
-   client.search({  
-      index: 'photographers',
-      type: 'user',
-      body: {
-        query: {
-          match: { "_id": req.params.id }
-        },
-      }
-    },function (error, response,status) {
-        if (error){
-          console.log("search error: "+error)
-        }
-        else {
-            res.json(response.hits.hits[0])
-        }
-    });
-
+  knex('photographer')
+  .where('id', req.params.id)
+  .then((results) => {
+    res.json(results);
+  })
 })
+
+app.get("/:id/influencer", function(req,res){
+  knex('influencer')
+  .where('id', req.params.id)
+  .then((results)=> {
+    res.json(results);
+  })
+})
+
+//post for logging
+
+
+
+
+  
 
 
 app.listen(port);
