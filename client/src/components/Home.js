@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
 import '../home.css'
+import { Redirect } from 'react-router-dom';
 import {Form, Row, Col, Button, Container} from 'react-bootstrap';
 import backgroundHome from '../collabhomepageanimated.gif';
 
-
 class Home extends Component {
-render () {
-  return (
+  constructor(props) {
+    super(props);
+    this.state = {redirect: false};
+  }
 
+  setRedirect() {
+    this.setState({redirect: true})
+  }
+
+  render () {
+    if (this.state.redirect) {
+      return (<Redirect to="/upload" />);
+    }
+   return (
     <div>
     <Container>
       <Row>
@@ -31,7 +42,7 @@ render () {
         </Form.Group>
         </Form>
 
-        <Button variant="outline-success" size="lg" className="loginButton">
+        <Button onClick={this.setRedirect.bind(this)} variant="outline-success" size="lg" className="loginButton">
         Login
         </Button>
 

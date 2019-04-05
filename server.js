@@ -26,7 +26,8 @@ const upload = multer({
 
 app.post("/upload",function (req,res){
     upload(req, res, async (err) => {
-        if(!err){
+    
+      if(!err){
             await getLabels.vR(`./public/uploads/${req.file.originalname}`,
                async (labels) => {
                   console.log(labels)

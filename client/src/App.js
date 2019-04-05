@@ -10,33 +10,32 @@ import Results from "./components/Results"
 import Requests from "./components/Requests"
 import Select from "./components/Select.js"
 import Messages from "./components/Messages.js"
+const axios = require("axios");
+
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-     user: [],
-     file: null
+     user: []
     };
   }
-
-
-  
+ 
   
   render() {
     return (
 
       <BrowserRouter>
       <Switch>
-        <Route path="/" User = {this.state.user} component={Home} exact />
-        <Route path="/select" User = {this.state.user} component={Select} exact />
-        <Route path="/loading" User = {this.state.user} component={Loading} />
-        <Route path="/upload" User = {this.state.user} component={Upload} />
-        <Route path="/photographer" User = {this.state.user} component={Photographer} />
-        <Route path="/results" User = {this.state.user} component={Results} />
-        <Route path="/requests" User = {this.state.user} component={Requests} />
-        <Route path="/messages" User = {this.state.user} component={Messages} />
+        <Route path="/" render={(props) => <Home user = {this.state.user}/>} exact/>
+        <Route path="/select"  component={Select} exact />
+        <Route path="/loading" component={Loading} />
+        <Route path="/upload" render={(props) => <Upload user = {this.state.user}  />} />
+        <Route path="/photographer" component={Photographer} />
+        <Route path="/results" component={Results} />
+        <Route path="/requests"  component={Requests} />
+        <Route path="/messages" component={Messages} />
         <Route component={Error} />
       </Switch>
       </BrowserRouter>
