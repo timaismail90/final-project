@@ -9,7 +9,7 @@ exports.seed = function(knex, Promise) {
           id: 1, 
           name: 'heftiba',
           unsplash_API: '"https://api.unsplash.com/users/heftiba/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",',
-          usernam:'heftiba'
+          username:'heftiba'
         },
         {
           id: 2,
@@ -43,7 +43,7 @@ exports.seed = function(knex, Promise) {
           id: 7,
           name: 'joe robles',
           unsplash_API:"https://api.unsplash.com/users/joerobles/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
-          usename: 'joerobles'
+          username: 'joerobles'
         },
         // {
         //   id: 8,
