@@ -7,6 +7,7 @@ exports.seed = function(knex, Promise) {
             id: 1, 
             name: 'Eloise Ambursley',
             username: 'e_ambursley',
+            type: 'influencer',
             unsplashAPI: "https://api.unsplash.com/users/e_ambursley/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8"
           }),
       ]);
