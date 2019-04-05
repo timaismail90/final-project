@@ -80,7 +80,10 @@ app.get("/:id/influencer", function(req,res){
     res.json(results);
   })
 })
-   
+
+//post for logging
+
+
 
 
   
