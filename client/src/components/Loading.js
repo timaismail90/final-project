@@ -1,26 +1,33 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../loading.css'
 import {Spinner, Button} from 'react-bootstrap';
 import backgroundLoading from '../collabloading.jpg';
-
-const Loading = () => {
+import { Link, withRouter } from 'react-router-dom';
+class Loading extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render () {
+    this.props.labels.keywords.pop()
+ const keyword = this.props.labels.keywords.map((word)=>{
+   return <h4 className="keywordDetected">{word}</h4>
+ })
   return (
     <div >
-
-
-
      <img className="loadingBackground" src={backgroundLoading} />
 
     <div className="keywordSection">
-    <h2 className="keywordTitle">Keywords Detected: </h2>
-    <h4 className="keywordDetected">Fashion</h4>
+    <h2 className="keywordTitle">Keywords </h2>
+    <div className="dots">
+      <Spinner animation="grow" variant="success" />
+      <Spinner animation="grow" variant="success" />
+      <Spinner animation="grow" variant="success" />
+  </div>
+    {keyword}
     <br/>
     <br/>
     <br/>
 
-     <Button variant="outline-success" size="lg">
-      View Photographers!
-     </Button>
       <br/>
       <br/>
       <br/>
@@ -29,5 +36,5 @@ const Loading = () => {
     </div>
   );
 };
-
-export default Loading;
+}
+export default withRouter (Loading);

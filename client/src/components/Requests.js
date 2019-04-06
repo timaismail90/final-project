@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../requests.css';
 import requestBackground from '../collabrequests.jpg';
 import {Row, Col, Container, Button, Card} from 'react-bootstrap';
 
 
-const Requests = () => {
+class Requests extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render(){
   return (
   <div>
-
 
   <Container>
     <Row>
@@ -53,5 +57,5 @@ const Requests = () => {
   </div>
   );
 };
-
+}
 export default Requests;

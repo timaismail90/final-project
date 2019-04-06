@@ -18,7 +18,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-     user: []
+     user: [],
+     match:[],
+     labels:""
     };
   }
  
@@ -29,9 +31,9 @@ class App extends Component {
       <BrowserRouter>
       <Switch>
         <Route path="/" render={(props) => <Home user = {this.state.user}/>} exact/>
-        <Route path="/select"  component={Select} exact />
-        <Route path="/loading" component={Loading} />
-        <Route path="/upload" render={(props) => <Upload user = {this.state.user}  />} />
+        <Route path="/select"  component={Select} />
+        {/* <Route path="/loading" render={(props) => <Loading user ={this.state.user} />}  /> */}
+        <Route path="/upload" component={Upload}/>
         <Route path="/photographer" component={Photographer} />
         <Route path="/results" component={Results} />
         <Route path="/requests"  component={Requests} />
@@ -40,7 +42,7 @@ class App extends Component {
       </Switch>
       </BrowserRouter>
 
-    )
+    );
   }
 }
 

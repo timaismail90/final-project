@@ -22,7 +22,17 @@ const upload = multer({
    limits:{fileSize: 1000000},
 }).single("myImage");
 
+app.post("/login", async function (req,res) {
+var username = req.body.username
+await knex('photographer')
+  .where('username', username)
+  .then((results) => {
+     const userInfo = results
+     const userID = results.id
+      res.send(userInfo)
+  })
 
+})
 
 app.post("/upload",function (req,res){
     upload(req, res, async (err) => {
@@ -30,7 +40,7 @@ app.post("/upload",function (req,res){
       if(!err){
             await getLabels.vR(`./public/uploads/${req.file.originalname}`,
                async (labels) => {
-                  console.log(labels)
+                 
                  await client.search({  
                        index: 'photographers',
                        type: 'user',
@@ -53,9 +63,10 @@ app.post("/upload",function (req,res){
                               array.push(hit["_source"])
                            }
                            })
+                           var keywords = labels.split(" ")
                            var object = {
                               match: array,
-                              img:labels
+                              img:keywords
                            }
                            res.send(object)
                          }
