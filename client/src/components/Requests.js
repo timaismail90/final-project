@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../requests.css';
 import requestBackground from '../collabrequests.jpg';
 import {Row, Col, Container, Button, Card} from 'react-bootstrap';
 import Navigation from './Navbar.js'
 
-const Requests = () => {
+class Requests extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render(){
   return (
   <div>
   <Navigation/>
@@ -53,5 +58,5 @@ const Requests = () => {
   </div>
   );
 };
-
+}
 export default Requests;

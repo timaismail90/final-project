@@ -1,5 +1,8 @@
-const client = require('./elasticsearch-db/connections.js');
+const ENV= process.env.ENV || "development";
 
+const client = require('./elasticsearch-db/connections.js');
+const knexConfig  = require("./knexfile");
+const knex= require("knex")(knexConfig[ENV]);
 const getLabels= require('./watson.js')()
 const express = require('express');
 const path = require('path');
@@ -19,14 +22,25 @@ const upload = multer({
    limits:{fileSize: 1000000},
 }).single("myImage");
 
+app.post("/login", async function (req,res) {
+var username = req.body.username
+await knex('photographer')
+  .where('username', username)
+  .then((results) => {
+     const userInfo = results
+     const userID = results.id
+      res.send(userInfo)
+  })
 
+})
 
 app.post("/upload",function (req,res){
     upload(req, res, async (err) => {
-        if(!err){
+    
+      if(!err){
             await getLabels.vR(`./public/uploads/${req.file.originalname}`,
                async (labels) => {
-                  console.log(labels)
+                 
                  await client.search({  
                        index: 'photographers',
                        type: 'user',
@@ -49,9 +63,10 @@ app.post("/upload",function (req,res){
                               array.push(hit["_source"])
                            }
                            })
+                           var keywords = labels.split(" ")
                            var object = {
                               match: array,
-                              img:labels
+                              img:keywords
                            }
                            res.send(object)
                          }
@@ -63,24 +78,27 @@ app.post("/upload",function (req,res){
 
 
 app.get("/:id/photographer", function(req,res){
-   client.search({  
-      index: 'photographers',
-      type: 'user',
-      body: {
-        query: {
-          match: { "_id": req.params.id }
-        },
-      }
-    },function (error, response,status) {
-        if (error){
-          console.log("search error: "+error)
-        }
-        else {
-            res.json(response.hits.hits[0])
-        }
-    });
-
+  knex('photographer')
+  .where('id', req.params.id)
+  .then((results) => {
+    res.json(results);
+  })
 })
+
+app.get("/:id/influencer", function(req,res){
+  knex('influencer')
+  .where('id', req.params.id)
+  .then((results)=> {
+    res.json(results);
+  })
+})
+
+//post for logging
+
+
+
+
+  
 
 
 app.listen(port);
