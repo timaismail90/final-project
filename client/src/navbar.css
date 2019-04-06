@@ -1,3 +1,17 @@
+.icons {
+  margin: 5px 5px;
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.icons:hover {
+  margin: 5px 5px;
+  font-size: 20px;
+  opacity: 1.0;
+}
+
 .brand {
-  font-family: 'Parisienne', cursive;
+  font-family: 'Parisienne', cursive !important;
+  font-size: 50px !important;
+  padding-left: 2%;
 }

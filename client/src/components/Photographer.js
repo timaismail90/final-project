@@ -7,7 +7,6 @@ import Navigation from './Navbar.js'
 function PhotographerPortfolio (prop){
  return(
  <div>
-<Navigation/>
 <Col sm><img className="portfolio" src={prop.photographer.urls.full} /></Col>
 </div>)
 }
@@ -35,6 +34,7 @@ class Photographer extends React.Component {
    if (this.state.photographer[0]) {
      return (
        <div>
+        <Navigation/>
        <div className="photographer-profile">
            <img className="profile-photo" src={this.state.photographer[0].user["profile_image"].large} />
            <h1 className="photographer-name">{this.state.photographer[0].user.name}</h1>

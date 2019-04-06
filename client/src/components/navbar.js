@@ -7,7 +7,7 @@ class Navigation extends Component {
 render () {
   return (
     <div>
-    <Navbar>
+    <Navbar className="nav-bar">
       <Navbar.Brand className="brand">Collab</Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">

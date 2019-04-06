@@ -10,18 +10,6 @@ render () {
   return (
 
     <div>
-    {/* <Navbar>
-      <Navbar.Brand className="brand">Collab</Navbar.Brand>
-      <Navbar.Toggle />
-    <Navbar.Collapse className="justify-content-end">
-      <Navbar.Text>
-        <span className="icons"><i class="fas fa-envelope"></i></span>
-        <span className="icons"><i class="fas fa-user"></i></span>
-        <span className="icons"><i class="fas fa-search"></i></span>
-        <span className="icons"><i class="fas fa-user-plus"></i></span>
-      </Navbar.Text>
-    </Navbar.Collapse>
-      </Navbar> */}
 
       <h1 className="begin-journey">Begin Your <span className="journey">Journey</span></h1>
       <Container>
