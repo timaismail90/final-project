@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../select.css'
-import {Form, Row, Col, Button, Container} from 'react-bootstrap';
+import {Form, Row, Col, Button, Container, Navbar} from 'react-bootstrap';
 import selectPhotographer from '../photog.jpg';
 import selectInfluencer from '../influencer.jpg';
 
@@ -10,6 +10,19 @@ render () {
   return (
 
     <div>
+    {/* <Navbar>
+      <Navbar.Brand className="brand">Collab</Navbar.Brand>
+      <Navbar.Toggle />
+    <Navbar.Collapse className="justify-content-end">
+      <Navbar.Text>
+        <span className="icons"><i class="fas fa-envelope"></i></span>
+        <span className="icons"><i class="fas fa-user"></i></span>
+        <span className="icons"><i class="fas fa-search"></i></span>
+        <span className="icons"><i class="fas fa-user-plus"></i></span>
+      </Navbar.Text>
+    </Navbar.Collapse>
+      </Navbar> */}
+
       <h1 className="begin-journey">Begin Your <span className="journey">Journey</span></h1>
       <Container>
       <Row>

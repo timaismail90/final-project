@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../home.css'
 import {Form, Row, Col, Button, Container} from 'react-bootstrap';
 import backgroundHome from '../collabhomepageanimated.gif';
+import Navigation from './Navbar.js'
 
 
 class Home extends Component {
@@ -9,6 +10,7 @@ render () {
   return (
 
     <div>
+    <Navigation/>
     <Container>
       <Row>
         <Col sm={4}>

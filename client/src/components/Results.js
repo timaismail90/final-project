@@ -4,12 +4,13 @@ import {Container, Row, Col, Button, Carousel, Card} from 'react-bootstrap';
 import carouselOne from '../carousel1.jpg';
 import carouselTwo from '../carousel2.jpg';
 import carouselThree from '../carousel3.jpg';
+import Navigation from './Navbar.js'
 
 const Results = () => {
   return (
 
   <div>
-
+    <Navigation/>
     <div>
       <Carousel>
       <Carousel.Item>

@@ -2,12 +2,12 @@ import React from 'react';
 import '../requests.css';
 import requestBackground from '../collabrequests.jpg';
 import {Row, Col, Container, Button, Card} from 'react-bootstrap';
-
+import Navigation from './Navbar.js'
 
 const Requests = () => {
   return (
   <div>
-
+  <Navigation/>
 
   <Container>
     <Row>

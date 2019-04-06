@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import '../messages.css'
 import {Form, Row, Col, Button, Container} from 'react-bootstrap';
-import selectPhotographer from '../photog.jpg';
-import selectInfluencer from '../influencer.jpg';
+import Navigation from './Navbar.js'
 
 
 class Messages extends Component {
-render () {
+  render () {
   return (
-<Container>
+  <div>
+  <Navigation/>
+  <Container>
   <Row>
     <Col sm={4} className="messages-left">
     <h4 className="your-connections">Your <span className="connections">Connections</span></h4>
@@ -44,7 +45,7 @@ render () {
     </Col>
   </Row>
 </Container>
-
+</div>
     )
   };
 

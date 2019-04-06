@@ -2,6 +2,7 @@ import React from 'react';
 import '../upload.css';
 import backgroundUpload from '../collabupload-copy.jpg';
 import {Form, Row, Col, Container, Button} from 'react-bootstrap';
+import Navigation from './Navbar.js'
 const axios = require("axios");
 const elasticsearch = require('elasticsearch')
 
@@ -41,7 +42,7 @@ onFormSubmit(e){
   render() {
   return (
   <div className="upload-page">
-
+<Navigation/>
 <Container>
   <Row>
     <Col sm={4}>

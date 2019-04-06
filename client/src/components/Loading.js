@@ -2,11 +2,12 @@ import React from 'react';
 import '../loading.css'
 import {Spinner, Button} from 'react-bootstrap';
 import backgroundLoading from '../collabloading.jpg';
+import Navigation from './Navbar.js'
 
 const Loading = () => {
   return (
     <div >
-
+    <Navigation/>
 
 
      <img className="loadingBackground" src={backgroundLoading} />

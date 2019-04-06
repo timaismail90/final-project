@@ -2,12 +2,12 @@ import React from 'react';
 import '../photographer.css'
 import {Container, Row, Col, Button} from 'react-bootstrap';
 import backgroundLoading from '../collabloading.jpg';
-
+import Navigation from './Navbar.js'
 
 function PhotographerPortfolio (prop){
  return(
  <div>
-
+<Navigation/>
 <Col sm><img className="portfolio" src={prop.photographer.urls.full} /></Col>
 </div>)
 }
