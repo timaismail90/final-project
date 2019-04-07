@@ -36,7 +36,7 @@ class Photographer extends React.Component {
        <div>
         <Navigation/>
        <div className="photographer-profile">
-           <img className="profile-photo" src={this.state.photographer[0].user["profile_image"].large} />
+           <img className="profile-photo" src={this.state.photographer} />
            <h1 className="photographer-name">{this.state.photographer[0].user.name}</h1>
            <h2 className = "photographer-location" > 📍 <span className="location">Toronto</span></h2>
           </div>

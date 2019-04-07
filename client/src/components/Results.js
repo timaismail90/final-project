@@ -22,8 +22,8 @@ class Results extends Component {
 
   render() {
     if(this.state.loading) {
-      console.log(this.props.location.state)
-      return <Loading labels= {this.props.location.state}/>;
+      console.log(this.props.location.state.keywords)
+      return <Loading labels= {this.props.location.state.keywords}/>;
     }
     return (<div>
       <div>
@@ -43,77 +43,25 @@ class Results extends Component {
 
         <Container>
           <Row>
-            <Col sm>
+            {
+              this.props.location.state.match.map(photographer =>(
+               <Col sm>
               <Card style={{ width: '18rem' }}>
-                < Card.Img variant = "top"
-                src="https://images.unsplash.com/photo-1548353396-ee9afe09f4bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80" />
+                <a href= >
+                <Card.Img variant = "top"
+                src={photographer.profilePhoto}/>
                 <Card.Body>
-                  <Card.Text>Hal Gal </Card.Text>
+                  <Card.Text>{photographer.name}</Card.Text>
                   <Button variant="outline-success">Collab!</Button>
                 </Card.Body>
               </Card>
-            </Col>
-
-            <Col sm>
-              <Card style={{ width: '18rem' }}>
-                < Card.Img variant = "top"
-                src="https://images.unsplash.com/photo-1548353396-ee9afe09f4bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80" />
-                <Card.Body>
-                  <Card.Text>Hal Gal </Card.Text>
-                  <Button variant="outline-success">Collab!</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            <Col sm>
-              <Card style={{ width: '18rem' }}>
-                < Card.Img variant = "top"
-                src="https://images.unsplash.com/photo-1548353396-ee9afe09f4bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80" />
-                <Card.Body>
-                  <Card.Text>Hal Gal </Card.Text>
-                  <Button variant="outline-success">Collab!</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col sm>
-              <Card style={{ width: '18rem' }}>
-                < Card.Img variant = "top"
-                src="https://images.unsplash.com/photo-1548353396-ee9afe09f4bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80" />
-                <Card.Body>
-                  <Card.Text>Hal Gal </Card.Text>
-                  <Button variant="outline-success">Collab!</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            <Col sm>
-              <Card style={{ width: '18rem' }}>
-                < Card.Img variant = "top"
-                src="https://images.unsplash.com/photo-1548353396-ee9afe09f4bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80" />
-                <Card.Body>
-                  <Card.Text>Hal Gal </Card.Text>
-                  <Button variant="outline-success">Collab!</Button>
-                </Card.Body>
-              </Card>
-            </Col>
-
-            <Col sm>
-              <Card style={{ width: '18rem' }}>
-                < Card.Img variant = "top"
-                src="https://images.unsplash.com/photo-1548353396-ee9afe09f4bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80" />
-                <Card.Body>
-                  <Card.Text>Hal Gal </Card.Text>
-                  <Button variant="outline-success">Collab!</Button>
-                </Card.Body>
-              </Card>
-            </Col>
+            </Col>))
+            }
           </Row>
         </Container>
       </div>
     </div>);
+    
   }
 }
 export default  withRouter(Results);

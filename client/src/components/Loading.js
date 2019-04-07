@@ -8,8 +8,9 @@ class Loading extends Component {
     super(props);
   }
   render () {
-    this.props.labels.keywords.pop()
- const keyword = this.props.labels.keywords.map((word)=>{
+    console.log(this.props)
+    this.props.labels.pop()
+ const keyword = this.props.labels.map((word)=>{
    return <h4 className="keywordDetected">{word}</h4>
  })
   return (
