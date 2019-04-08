@@ -54,11 +54,11 @@ knex('photographer')
 })
 
 app.post("/collab", function(req,res){
-  knex("requests").insert([
-    { photographer_id: req.body.photographer },
-    { influencer_id: req.body.influencer }
-  ]).then((results) => {
-      res.send(results)
+  console.log("influencer",req.body.influencer)  
+  console.log("photographer",req.body.photographer)
+  knex("requests").insert({'photographer_id':req.body.photographer, 'influencer_id':req.body.influencer
+  }).then((results) => {
+      res.sendStatus(200)
 })
 
 
@@ -91,6 +91,7 @@ app.post("/upload",function (req,res){
          
                               if( hit["_score"]> 2){
                               array.push(hit["_source"])
+                              console.log(hit)
                            }
                            })
                            var keywords = labels.split(" ")
@@ -108,8 +109,8 @@ app.post("/upload",function (req,res){
 
 
 // app.get("/:id/photographer", function(req,res){
-//   knex('photographer')
-//   .where('id', req.params.id)
+//   knex('photographer').join('requests', 'users.id', '=', 'contacts.id')
+  
 //   .then((results) => {
 //     res.json(results);
 //   })

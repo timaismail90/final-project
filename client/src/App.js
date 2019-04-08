@@ -25,7 +25,8 @@ class App extends Component {
      labels:[],
      username:"",
      fireRedirect:false,
-     photographerMatch:""
+     photographerMatch:"",
+     connected:false
     };
   }
 
@@ -64,8 +65,26 @@ class App extends Component {
   })
 }
 onClickMessage = ()=>{
+<<<<<<< HEAD
   this.setState({fireRedirect:true})
 
+=======
+  this.setState({
+    fireRedirect:true,
+    connected:true
+  }) 
+
+  console.log("photomatch", this.state.photographerMatch)
+  axios.post("/collab", {
+   photographer:this.state.photographerMatch.id, 
+   influencer:this.state.user.id 
+  }).then((response) => {
+    console.log(response.data)
+    
+
+})
+     
+>>>>>>> pendingrequests
 }
 
   render() {

@@ -6,7 +6,6 @@ exports.seed = function(knex, Promise) {
       // Inserts seed entries
       return knex('requests').insert([
         {
-          id: 1,
            photographer_id: '1',
            influencer_id: '1'
           },
