@@ -80,7 +80,7 @@ onClickMessage = ()=>{
         <Route path="/photographer" render={(props) => <Photographer user = {this.state.user}/>} />
         <Route path="/results" render={(props)=> <Results photographerMatch={this.state.photographerMatch} onClickMatch={this.onClickMatch} />} /> 
         <Route path="/requests" render={(props)=> <Requests user = {this.state.user} />}  />
-        <Route path="/messages" component={Messages} />
+        <Route path="/messages" render={(props)=> <Messages user = {this.state.user} />} />
         <Route component={Error} />
       </Switch>
       </BrowserRouter>
