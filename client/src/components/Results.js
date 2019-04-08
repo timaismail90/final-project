@@ -11,9 +11,6 @@ import {withRouter} from 'react-router-dom';
 const axios = require("axios");
 
 
-
-
-
 class Results extends Component {
   constructor(props) {
     super(props);
@@ -23,13 +20,13 @@ class Results extends Component {
     }
   }
 
-  
 
   componentDidMount() {
     setTimeout(()=>{
       this.setState({loading:false})
     }, 5000)
   }
+
 
 
 
@@ -64,11 +61,11 @@ class Results extends Component {
                <Col sm>
               <Card style={{ width: '18rem' }}>
    
-                <Card.Img variant = "top"
+                <Card.Img onClick={this.props.onClickMatch.bind(this, photographer)} variant = "top"
                 src={photographer.profilePhoto}/>
                 <Card.Body>
                   <Card.Text>{photographer.name}</Card.Text>
-                  <Button onClick={this.props.onClickMatch.bind(this, photographer)} variant="outline-success">Collab!</Button>
+                  <Button variant="outline-success">Collab!</Button>
                 </Card.Body>
               </Card>
             </Col>))

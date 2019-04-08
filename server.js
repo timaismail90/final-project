@@ -53,6 +53,11 @@ knex('photographer')
 
 })
 
+app.post("/collab", function(req,res){
+
+
+})
+
 app.post("/upload",function (req,res){
     upload(req, res, async (err) => {
     

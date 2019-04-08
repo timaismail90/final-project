@@ -23,7 +23,6 @@ class Photographer extends React.Component {
  componentDidMount () {
    
  var url = this.props.user.unsplashAPI
- console.log(this.props)
    fetch(url)
    .then(results => {
      return results.json();
