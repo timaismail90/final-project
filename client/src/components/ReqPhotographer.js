@@ -44,7 +44,7 @@ render(){
          }
         return (
         <div>
-        <Navigation/>
+        <Navigation user={this.props.user}/>
         <Button onClick={this.props.onClickMessage}>Connect</Button>
        <div className="photographer-profile">
            <img className="profile-photo" src={this.state.match[0].user.profile_image.large} />
