@@ -136,16 +136,16 @@ app.post("/upload",function (req,res){
 
 // })
 
-app.get("/:id/Photographerrequest", function(req,res){
-  var id= req.params.id
-  knex('requests')
-  .join('photographer', 'requests.id', '=', 'photographer.id')
-  .where('photographer.id', req.params.id)
-    .then((results)=> {
-      res.json(results);
-    })
+// app.get("/:id/Photographerrequest", function(req,res){
+//   var id= req.params.id
+//   knex('requests')
+//   .join('photographer', 'requests.id', '=', 'photographer.id')
+//   .where('photographer.id', req.params.id)
+//     .then((results)=> {
+//       res.json(results);
+//     })
 
-})
+// })
   
 
 
