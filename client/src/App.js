@@ -37,6 +37,11 @@ class App extends Component {
   }
   onClickMatch = (photographer,e)=>{
     this.setState({photographerMatch:photographer })
+    // axios.post("/collab",{
+    // }).then((response) => {
+    //       this.setState({user:response.data[0],fireRedirect:true})   
+
+  // })
   }
 
   handleChange = event => {
@@ -74,7 +79,7 @@ onClickMessage = ()=>{
         <Route path="/upload"render={(props) => <Upload  setRedirectUpload ={this.setRedirectUpload} user = {this.state.user} match={this.state.match} labels={this.state.labels} fireRedirect={this.state.fireRedirect} />} />
         <Route path="/photographer" render={(props) => <Photographer user = {this.state.user}/>} />
         <Route path="/results" render={(props)=> <Results photographerMatch={this.state.photographerMatch} onClickMatch={this.onClickMatch} />} /> 
-        <Route path="/requests"  component={Requests} />
+        <Route path="/requests" render={(props)=> <Requests user = {this.state.user} />}  />
         <Route path="/messages" component={Messages} />
         <Route component={Error} />
       </Switch>

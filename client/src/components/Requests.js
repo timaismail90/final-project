@@ -3,13 +3,31 @@ import '../requests.css';
 import requestBackground from '../collabrequests.jpg';
 import {Row, Col, Container, Button, Card} from 'react-bootstrap';
 import Navigation from './Navbar.js'
+const axios = require("axios");
 
 class Requests extends Component {
   constructor(props) {
     super(props);
+    this.state={
+      requestmade:[]
+    }
   }
+  componentDidMount () {
+    var id = this.props.user.id
+    var url = '/'+id+'/Influencerrequest'
+   
+    axios.get(url)
+    .then(function (response) {
+     this.setState({requestmade:response.data})
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+    }
 
   render(){
+
   return (
   <div>
   <Navigation/>

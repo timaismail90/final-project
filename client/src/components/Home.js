@@ -15,8 +15,12 @@ class Home extends Component {
 
 
   render () {
-    if (this.props.fireRedirect) {
+    console.log(this.props)
+    if (this.props.user.type === "influencer" && this.props.fireRedirect) {
       return (<Redirect to="/photographer" />);
+    }
+    if (this.props.user.type === "photographer" && this.props.fireRedirect) {
+      return (<Redirect to="/messages" />);
     }
    return (
     <div>

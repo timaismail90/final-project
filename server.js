@@ -54,6 +54,12 @@ knex('photographer')
 })
 
 app.post("/collab", function(req,res){
+  knex("requests").insert([
+    { photographer_id: req.body.photographer },
+    { influencer_id: req.body.influencer }
+  ]).then((results) => {
+      res.send(results)
+})
 
 
 })
@@ -101,27 +107,45 @@ app.post("/upload",function (req,res){
 })
 
 
-app.get("/:id/photographer", function(req,res){
-  knex('photographer')
-  .where('id', req.params.id)
-  .then((results) => {
-    res.json(results);
-  })
-})
+// app.get("/:id/photographer", function(req,res){
+//   knex('photographer')
+//   .where('id', req.params.id)
+//   .then((results) => {
+//     res.json(results);
+//   })
+// })
 
-app.get("/:id/influencer", function(req,res){
-  knex('influencer')
-  .where('id', req.params.id)
-  .then((results)=> {
-    res.json(results);
-  })
-})
+// app.get("/:id/influencer", function(req,res){
+//   knex('influencer')
+//   .where('id', req.params.id)
+//   .then((results)=> {
+//     res.json(results);
+//   })
+// })
 
 //post for logging
 
+// app.get("/:id/Influencerrequest", function(req,res){
+//   var id= req.params.id
+//   knex('requests')
+//   .join('influencer', 'requests.id', '=', 'influencer.id')
+//   .where('influencer.id', req.params.id)
+//     .then((results)=> {
+//       res.json(results);
+//     })
 
+// })
 
+app.get("/:id/Photographerrequest", function(req,res){
+  var id= req.params.id
+  knex('requests')
+  .join('photographer', 'requests.id', '=', 'photographer.id')
+  .where('photographer.id', req.params.id)
+    .then((results)=> {
+      res.json(results);
+    })
 
+})
   
 
 

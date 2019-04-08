@@ -47,7 +47,8 @@ onFormSubmit = (e) =>{
 
       return (<Redirect to={{
             pathname:"/results",
-            state: { match:this.props.match,
+            state: { 
+              match:this.props.match,
               keywords:this.props.labels}
         }} />
        )}
