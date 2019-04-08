@@ -20,11 +20,10 @@ class Home extends Component {
       return (<Redirect to="/photographer" />);
     }
     if (this.props.user.type === "photographer" && this.props.fireRedirect) {
-      return (<Redirect to="/messages" />);
+      return (<Redirect to="/photographer" />);
     }
    return (
     <div>
-    <Navigation/>
     <Container>
       <Row>
         <Col sm={4}>
