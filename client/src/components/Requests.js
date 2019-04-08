@@ -30,7 +30,7 @@ class Requests extends Component {
 
   return (
   <div>
-  <Navigation/>
+  <Navigation user={this.props.user}/>
 
   <Container>
     <Row>

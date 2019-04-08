@@ -74,13 +74,13 @@ onClickMessage = ()=>{
       <Switch>
         <Route path="/" render={(props) => <Home  handleChange={this.handleChange} onLogin={this.onLogin} fireRedirect = {this.state.fireRedirect} user = {this.state.user}/>} exact/>
         <Route path="/select"  component={Select} />
-        <Route path="/reqPhotographer" render={(props)=> <ReqPhotographer onClickMessage={this.onClickMessage} fireRedirect={this.state.fireRedirect} photographerMatch={this.state.photographerMatch}/>} />
+        <Route path="/reqPhotographer" render={(props)=> <ReqPhotographer onClickMessage={this.onClickMessage} fireRedirect={this.state.fireRedirect} user = {this.state.user}  photographerMatch={this.state.photographerMatch}/>} />
         {/* <Route path="/loading" render={(props) => <Loading user ={this.state.user} />}  /> */}
         <Route path="/upload"render={(props) => <Upload  setRedirectUpload ={this.setRedirectUpload} user = {this.state.user} match={this.state.match} labels={this.state.labels} fireRedirect={this.state.fireRedirect} />} />
         <Route path="/photographer" render={(props) => <Photographer user = {this.state.user}/>} />
         <Route path="/results" render={(props)=> <Results photographerMatch={this.state.photographerMatch} onClickMatch={this.onClickMatch} />} /> 
         <Route path="/requests" render={(props)=> <Requests user = {this.state.user} />}  />
-        <Route path="/messages" component={Messages} />
+        <Route path="/messages" render={(props)=> <Messages user = {this.state.user} />} />
         <Route component={Error} />
       </Switch>
       </BrowserRouter>
