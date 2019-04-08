@@ -1,4 +1,7 @@
+require('dotenv').config();
 const ENV= process.env.ENV || "development";
+const cookieSession = require('cookie-session')
+const bodyParser = require('body-parser')
 
 const client = require('./elasticsearch-db/connections.js');
 const knexConfig  = require("./knexfile");
@@ -10,6 +13,13 @@ const port = 5000;
 const app = express();
 const multer = require("multer");
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
+app.use(cookieSession({
+  name: 'session',
+  keys: ['FINALPROJECT']
+}))
+ 
 const storage = multer.diskStorage({
    destination: "./public/uploads/",
    filename: function(req, file, cb){
@@ -22,14 +32,23 @@ const upload = multer({
    limits:{fileSize: 1000000},
 }).single("myImage");
 
-app.post("/login", async function (req,res) {
+app.post("/login",  function (req,res) {
 var username = req.body.username
-await knex('photographer')
+knex('photographer')
   .where('username', username)
   .then((results) => {
-     const userInfo = results
-     const userID = results.id
-      res.send(userInfo)
+    if(results.length){
+      req.session.id = username
+      res.send(results)
+    } else {
+       knex('influencer')
+        .where('username', username)
+        .then((results) => {
+          req.session.id = username
+            res.send(results)
+    })
+      
+    }
   })
 
 })

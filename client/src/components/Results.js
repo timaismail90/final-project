@@ -1,30 +1,46 @@
 import React, {Component} from 'react';
+import { Redirect } from 'react-router-dom';
 import '../results.css'
 import {Container, Row, Col, Button, Carousel, Card} from 'react-bootstrap';
 import carouselOne from '../carousel1.jpg';
 import carouselTwo from '../carousel2.jpg';
 import carouselThree from '../carousel3.jpg';
 import Navigation from './Navbar.js'
+import Loading from './Loading.js'
 import {withRouter} from 'react-router-dom';
-import Loading from "./Loading"
+const axios = require("axios");
+
+
+
+
 
 class Results extends Component {
   constructor(props) {
     super(props);
-    this.state= {loading:true}
+    this.state= {
+      loading:true,
+      match:false
+    }
   }
+
+  
 
   componentDidMount() {
     setTimeout(()=>{
       this.setState({loading:false})
-    }, 15000)
+    }, 5000)
   }
+
+
 
   render() {
     if(this.state.loading) {
-      console.log(this.props.location.state.keywords)
       return <Loading labels= {this.props.location.state.keywords}/>;
-    }
+    } else{
+      if (this.props.photographerMatch) {
+        return (<Redirect to="/reqPhotographer" />);
+      }
+
     return (<div>
       <div>
         <Carousel>
@@ -47,12 +63,12 @@ class Results extends Component {
               this.props.location.state.match.map(photographer =>(
                <Col sm>
               <Card style={{ width: '18rem' }}>
-                <a href= >
+   
                 <Card.Img variant = "top"
                 src={photographer.profilePhoto}/>
                 <Card.Body>
                   <Card.Text>{photographer.name}</Card.Text>
-                  <Button variant="outline-success">Collab!</Button>
+                  <Button onClick={this.props.onClickMatch.bind(this, photographer)} variant="outline-success">Collab!</Button>
                 </Card.Body>
               </Card>
             </Col>))
@@ -60,7 +76,7 @@ class Results extends Component {
           </Row>
         </Container>
       </div>
-    </div>);
+    </div>)};
     
   }
 }

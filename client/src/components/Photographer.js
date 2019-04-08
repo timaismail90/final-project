@@ -15,29 +15,35 @@ function PhotographerPortfolio (prop){
 class Photographer extends React.Component {
  constructor () {
  super ();
- this.state = {photographer:[]};
+ this.state = {
+   user:[]
+ }
+
  };
  componentDidMount () {
-   fetch('https://api.unsplash.com/users/joerobles/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8')
+   
+ var url = this.props.user.unsplashAPI
+ console.log(this.props)
+   fetch(url)
    .then(results => {
      return results.json();
    })
-   .then(data => { this.setState({photographer:data})
+   .then(data => { this.setState({user:data})
    console.log(data)
    })
  }
  render() {
-   let photographr = this.state.photographer.map(photographer =>{
+   let photographr = this.state.user.map(photographer =>{
      return (
     <PhotographerPortfolio photographer = {photographer}/>)
    })
-   if (this.state.photographer[0]) {
+   if (this.state.user[0]) {
      return (
        <div>
         <Navigation/>
        <div className="photographer-profile">
-           <img className="profile-photo" src={this.state.photographer} />
-           <h1 className="photographer-name">{this.state.photographer[0].user.name}</h1>
+           <img className="profile-photo" src={this.state.user[0].user.profile_image.large} />
+           <h1 className="photographer-name">{this.state.user[0].user.name}</h1>
            <h2 className = "photographer-location" > 📍 <span className="location">Toronto</span></h2>
           </div>
            <Container>

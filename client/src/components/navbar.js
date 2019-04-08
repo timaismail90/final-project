@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../navbar.css'
 import {Navbar} from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
 
 class Navigation extends Component {
 render () {
@@ -15,7 +15,7 @@ render () {
         <span className="icons"><i class="fas fa-envelope"></i></span>
         <span className="icons"><i class="fas fa-user"></i></span>
         <span className="icons"><i class="fas fa-search"></i></span>
-        <span className="icons"><i class="fas fa-user-plus"></i></span>
+        <Link to="/upload"> <span className="icons"><i class="fa fa-upload" aria-hidden="true"></i></span></Link>
       </Navbar.Text>
       </Navbar.Collapse>
     </Navbar>

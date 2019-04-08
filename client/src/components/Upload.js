@@ -13,20 +13,12 @@ class Upload extends React.Component {
   constructor(props) {
     super(props);
     this.state ={
-        file: null,
-        labels: "",
-        match:[],
-        fireRedirect:false
+        file: null
+  
     };
 
 }
-setRedirect= (labels, match) => {
-  this.setState({
-    labels:labels,
-    match:match,
-    fireRedirect:true
-})
-}
+
 onFormSubmit = (e) =>{
 
     e.preventDefault();
@@ -40,7 +32,7 @@ onFormSubmit = (e) =>{
     axios.post("/upload",formData,config)
         .then((response) => {
           console.log(response.data)
-         return this.setRedirect(response.data.img, response.data.match)
+         return this.props.setRedirectUpload(response.data.img, response.data.match)
   })
 
 }
@@ -50,13 +42,13 @@ onFormSubmit = (e) =>{
 }
 
   render() {
-
-    if (this.state.fireRedirect) {
+   
+    if (!this.props.fireRedirect) {
 
       return (<Redirect to={{
             pathname:"/results",
-            state: { match:this.state.match,
-              keywords:this.state.labels}
+            state: { match:this.props.match,
+              keywords:this.props.labels}
         }} />
        )}
 
