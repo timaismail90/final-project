@@ -8,6 +8,7 @@ import Error from "./components/Error"
 import Photographer from "./components/Photographer"
 import Results from "./components/Results"
 import Requests from "./components/Requests"
+import Pending from "./components/Pending"
 import Select from "./components/Select.js"
 import Messages from "./components/Messages.js"
 import ReqPhotographer from './components/ReqPhotographer';
@@ -27,7 +28,7 @@ class App extends Component {
      photographerMatch:""
     };
   }
- 
+
   setRedirectUpload= (labels, match) => {
     this.setState({
       labels:labels,
@@ -39,7 +40,7 @@ class App extends Component {
     this.setState({photographerMatch:photographer })
     // axios.post("/collab",{
     // }).then((response) => {
-    //       this.setState({user:response.data[0],fireRedirect:true})   
+    //       this.setState({user:response.data[0],fireRedirect:true})
 
   // })
   }
@@ -58,15 +59,15 @@ class App extends Component {
     axios.post("/login",{
       username:username.trim()
     }).then((response) => {
-          this.setState({user:response.data[0],fireRedirect:true})   
+          this.setState({user:response.data[0],fireRedirect:true})
 
   })
 }
 onClickMessage = ()=>{
-  this.setState({fireRedirect:true}) 
-    
+  this.setState({fireRedirect:true})
+
 }
-  
+
   render() {
     return (
 
@@ -78,8 +79,9 @@ onClickMessage = ()=>{
         {/* <Route path="/loading" render={(props) => <Loading user ={this.state.user} />}  /> */}
         <Route path="/upload"render={(props) => <Upload  setRedirectUpload ={this.setRedirectUpload} user = {this.state.user} match={this.state.match} labels={this.state.labels} fireRedirect={this.state.fireRedirect} />} />
         <Route path="/photographer" render={(props) => <Photographer user = {this.state.user}/>} />
-        <Route path="/results" render={(props)=> <Results photographerMatch={this.state.photographerMatch} onClickMatch={this.onClickMatch} />} /> 
+        <Route path="/results" render={(props)=> <Results photographerMatch={this.state.photographerMatch} onClickMatch={this.onClickMatch} />} />
         <Route path="/requests" render={(props)=> <Requests user = {this.state.user} />}  />
+        <Route path="/pending" render={(props)=> <Pending user = {this.state.user} />}  />
         <Route path="/messages" render={(props)=> <Messages user = {this.state.user} />} />
         <Route component={Error} />
       </Switch>

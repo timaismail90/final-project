@@ -15,7 +15,7 @@ class Requests extends Component {
   componentDidMount () {
     var id = this.props.user.id
     var url = '/'+id+'/Influencerrequest'
-   
+
     axios.get(url)
     .then(function (response) {
      this.setState({requestmade:response.data})
@@ -23,7 +23,7 @@ class Requests extends Component {
     .catch(function (error) {
       console.log(error);
     });
-    
+
     }
 
   render(){
