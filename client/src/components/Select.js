@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../select.css'
-import {Form, Row, Col, Button, Container, Navbar} from 'react-bootstrap';
+import {Form, Row, Col, Button, Container, Navbar, ButtonToolbar, OverlayTrigger, Tooltip} from 'react-bootstrap';
 import selectPhotographer from '../photog.jpg';
 import selectInfluencer from '../influencer.jpg';
 
@@ -10,7 +10,24 @@ render () {
   return (
 
     <div>
+<ButtonToolbar>
+  {['top', 'right', 'bottom', 'left'].map(placement => (
+    <OverlayTrigger
+      key={placement}
+      placement={placement}
+      overlay={
+        <Tooltip id={`tooltip-${placement}`}>
+          Tooltip on <strong>{placement}</strong>.
+        </Tooltip>
+      }
+    >
+      <Button variant="secondary">Tooltip on {placement}</Button>
+    </OverlayTrigger>
+  ))}
+</ButtonToolbar>;
 
+
+{/* **** */}
       <h1 className="begin-journey">Begin Your <span className="journey">Journey</span></h1>
       <Container>
       <Row>

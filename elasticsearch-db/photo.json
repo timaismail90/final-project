@@ -5,7 +5,7 @@
    "location": "toronto",
     "id":1,
     "unsplashApi": "https://api.unsplash.com/users/heftiba/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
-    "profilePhoto":"https://images.unsplash.com/profile-1510932839800-fa28425a0bc5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128",
+    "profilePhoto":"https://images.unsplash.com/profile-1510932839800-fa28425a0bc5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop",
     "username": "heftiba"
  },
    {
@@ -14,7 +14,7 @@
     "location":"montreal",
       "id":2,
       "unsplashApi": "https://api.unsplash.com/users/cravethebenefits/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
-      "profilePhoto":"https://images.unsplash.com/profile-1490323661174-682bfb6ce36d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128",
+      "profilePhoto":"https://images.unsplash.com/profile-1490323661174-682bfb6ce36d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop",
       "username": "cravethebenefits"
 
    },
@@ -25,7 +25,7 @@
     "location":"mississauga",
       "id":3,
       "unsplashApi": "https://api.unsplash.com/users/edgarraw/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
-      "profilePhoto":"https://images.unsplash.com/profile-1511689084658-01d41b7772ff?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128",
+      "profilePhoto":"https://images.unsplash.com/profile-1511689084658-01d41b7772ff?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop",
       "username": "edgarraw"
     },
 
@@ -35,7 +35,7 @@
       "location":"north-york",
       "id":4,
       "unsplashApi": "https://api.unsplash.com/users/iamfbk/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
-      "profilePhoto":"https://images.unsplash.com/placeholder-avatars/extra-large.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128",
+      "profilePhoto": "https://images.unsplash.com/photo-1481740586420-804cc4418700?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop",
       "username": "iamfbk"
     },
 
@@ -45,7 +45,7 @@
     "location":"downtown toronto",
       "id":5,
       "unsplashApi": "https://api.unsplash.com/users/nate_dumlao/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
-      "profilePhoto":"https://images.unsplash.com/profile-1495427732560-fe5248ad6638?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128",
+      "profilePhoto":"https://images.unsplash.com/profile-1495427732560-fe5248ad6638?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop",
       "username": "nate_dumlao"
     },
 
@@ -55,16 +55,16 @@
     "location":"square one",
       "id":6,
       "unsplashApi": "https://api.unsplash.com/users/priscilladupreez/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
-      "profilePhoto":"https://images.unsplash.com/profile-fb-1456966892-7a0660be4720.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128",
+      "profilePhoto": "https://images.unsplash.com/photo-1550433880-9772bc077291?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop",
       "username": "priscilladupreez"
     },
    {
     "name" : "joe robles",
-    "keyWords":"Hair Face Chin Hairstyle Shoulder Skin Head Male Neck Beauty White Hair Face Black Hairstyle Head Chin Male Buzz cut Model Eyewear Hair Glasses Cool Face Forehead Blue Hairstyle Eyebrow Eyewear Face Glasses Sunglasses Skin Cool Eyebrow Lip Head Forehead Male Shoulder Human Human body Photography Barechested Flash photography Fashion design Photograph Standing Shoulder Black-and-white Male Sitting Monochrome Cool Eyewear Hair  Face Glasses Hairstyle Neck Head Afro Wave Ocean Sea Beach Sky Skimboarding Horizon Wind wave Water Surfboard Eyewear Face Hair Glasses Cool Chin Head Forehead Eyebrow Nose Hair Face Eyebrow Lip Beauty Hairstyle Chin Head Skin" ,     
+    "keyWords":"Hair Face Chin Hairstyle Shoulder Skin Head Male Neck Beauty White Hair Face Black Hairstyle Head Chin Male Buzz cut Model Eyewear Hair Glasses Cool Face Forehead Blue Hairstyle Eyebrow Eyewear Face Glasses Sunglasses Skin Cool Eyebrow Lip Head Forehead Male Shoulder Human Human body Photography Barechested Flash photography Fashion design Photograph Standing Shoulder Black-and-white Male Sitting Monochrome Cool Eyewear Hair  Face Glasses Hairstyle Neck Head Afro Wave Ocean Sea Beach Sky Skimboarding Horizon Wind wave Water Surfboard Eyewear Face Hair Glasses Cool Chin Head Forehead Eyebrow Nose Hair Face Eyebrow Lip Beauty Hairstyle Chin Head Skin" ,
     "location":"guelph",
       "id":7,
       "unsplashApi": "https://api.unsplash.com/users/joerobles/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
-      "profilePhoto":"https://images.unsplash.com/profile-fb-1520498473-aaf136c6e369.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128",
+      "profilePhoto":"https://images.unsplash.com/profile-fb-1520498473-aaf136c6e369.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop",
       "username": "joerobles"
     }
 ]

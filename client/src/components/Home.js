@@ -10,7 +10,7 @@ const axios = require("axios");
 class Home extends Component {
   constructor(props) {
     super(props);
-    
+
   }
 
 

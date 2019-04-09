@@ -21,7 +21,7 @@ class Photographer extends React.Component {
 
  };
  componentDidMount () {
-   
+
  var url = this.props.user.unsplashAPI
    fetch(url)
    .then(results => {
@@ -41,7 +41,7 @@ class Photographer extends React.Component {
        <div>
         <Navigation user={this.props.user}/>
        <div className="photographer-profile">
-           <img className="profile-photo" src={this.state.user[0].user.profile_image.large} />
+           <img className="profile-photo" src={this.props.user.profilepic} />
            <h1 className="photographer-name">{this.state.user[0].user.name}</h1>
            <h2 className = "photographer-location" > 📍 <span className="location">Toronto</span></h2>
           </div>
