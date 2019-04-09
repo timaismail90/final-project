@@ -28,7 +28,8 @@ height: 450px !important;
 }
 
 .cursive-photographer {
-  font-family: 'Parisienne', cursive !important;
+   font-family: 'Cormorant SC', serif;
+  font-weight: 700;
 }
 
 .card-img-top {

@@ -10,7 +10,8 @@
 }
 
 .keywordTitle {
-  font-family: 'Parisienne', cursive;
+   font-family: 'Cormorant SC', serif;
+  font-weight: 700;
   font-size: 35px;
   margin-bottom: 3rem;
 }
