@@ -42,6 +42,7 @@ exports.seed = function(knex, Promise) {
           profilepic:"https://images.unsplash.com/profile-1495427732560-fe5248ad6638?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit&h=128&w=128",
           username: 'nate_dumlao',
           type: 'photographer'
+
         },
         {
           id: 6,
