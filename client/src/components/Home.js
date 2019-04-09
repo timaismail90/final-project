@@ -36,7 +36,7 @@ class Home extends Component {
             <Form.Group as={Row} controlId="username">
               <Col>
                 <Form.Control type= "username" defaultValue={this.props.username}
-              onChange={this.props.handleChange} plaintext placeholder="Enter your email" />
+              onChange={this.props.handleChange} plaintext placeholder="Enter your username" />
               </Col>
             </Form.Group>
 

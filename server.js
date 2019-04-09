@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 //   name: 'session',
 //   keys: ['FINALPROJECT']
 // }))
- 
+
 const storage = multer.diskStorage({
    destination: "./public/uploads/",
    filename: function(req, file, cb){
@@ -44,17 +44,17 @@ knex('photographer')
        knex('influencer')
         .where('username', username)
         .then((results) => {
-        
+
             res.send(results)
     })
-      
+
     }
   })
 
 })
 
 app.post("/collab", function(req,res){
-  console.log("influencer",req.body.influencer)  
+  console.log("influencer",req.body.influencer)
   console.log("photographer",req.body.photographer)
   knex("requests").insert({'photographer_id':req.body.photographer, 'influencer_id':req.body.influencer
   }).then((results) => {
@@ -62,7 +62,7 @@ app.post("/collab", function(req,res){
 })
 })
 app.post("/decline", function(req,res){
-  console.log("influencer",req.body.influencer)  
+  console.log("influencer",req.body.influencer)
   console.log("photographer",req.body.photographer)
   knex("requests")
   .where({'photographer_id':req.body.photographer, 'influencer_id':req.body.influencer
@@ -75,12 +75,12 @@ app.post("/decline", function(req,res){
 
 app.post("/upload",function (req,res){
     upload(req, res, async (err) => {
-    
+
       if(!err){
             await getLabels.vR(`./public/uploads/${req.file.originalname}`,
                async (labels) => {
-                 
-                 await client.search({  
+
+                 await client.search({
                        index: 'photographers',
                        type: 'user',
                        body: {
@@ -95,14 +95,16 @@ app.post("/upload",function (req,res){
                          else {
                            console.log("--- Hits ---");
                           var array =[];
-                          var average = 0
-                           response.hits.hits.forEach(function(hit,i){
-         
+                          var sum = 0
+                          var pointer=0
+                            console.log(response.hits)
+                          response.hits.hits.forEach( function(hit,i){
                               if( hit["_score"]> 2){
                               array.push(hit["_source"])
                               console.log(hit)
                            }
                            })
+
                            var keywords = labels.split(" ")
                            var object = {
                               match: array,
@@ -119,7 +121,7 @@ app.post("/upload",function (req,res){
 
 // app.get("/:id/photographer", function(req,res){
 //   knex('photographer').join('requests', 'users.id', '=', 'contacts.id')
-  
+
 //   .then((results) => {
 //     res.json(results);
 //   })
