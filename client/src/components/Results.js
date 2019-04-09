@@ -65,7 +65,7 @@ class Results extends Component {
                 src={photographer.profilePhoto}/>
                 <Card.Body>
                   <Card.Text>{photographer.name}</Card.Text>
-                  <Button variant="outline-success">Send A Request!</Button>
+                  <Button onClick={this.props.onClickMatch.bind(this, photographer)} variant="outline-success">Profile</Button>
                 </Card.Body>
               </Card>
             </Col>))
@@ -74,7 +74,7 @@ class Results extends Component {
         </Container>
       </div>
     </div>)};
-
+    }
   }
-}
+
 export default  withRouter(Results);

@@ -1,6 +1,6 @@
 require('dotenv').config();
 const ENV= process.env.ENV || "development";
-const cookieSession = require('cookie-session')
+// const cookieSession = require('cookie-session')
 const bodyParser = require('body-parser')
 
 const client = require('./elasticsearch-db/connections.js');
@@ -9,16 +9,16 @@ const knex= require("knex")(knexConfig[ENV]);
 const getLabels= require('./watson.js')()
 const express = require('express');
 const path = require('path');
-const port = 5000;
+const port = 8080;
 const app = express();
 const multer = require("multer");
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
-app.use(cookieSession({
-  name: 'session',
-  keys: ['FINALPROJECT']
-}))
+// app.use(cookieSession({
+//   name: 'session',
+//   keys: ['FINALPROJECT']
+// }))
  
 const storage = multer.diskStorage({
    destination: "./public/uploads/",
@@ -38,13 +38,13 @@ knex('photographer')
   .where('username', username)
   .then((results) => {
     if(results.length){
-      req.session.id = username
+
       res.send(results)
     } else {
        knex('influencer')
         .where('username', username)
         .then((results) => {
-          req.session.id = username
+        
             res.send(results)
     })
       
@@ -58,6 +58,15 @@ app.post("/collab", function(req,res){
   console.log("photographer",req.body.photographer)
   knex("requests").insert({'photographer_id':req.body.photographer, 'influencer_id':req.body.influencer
   }).then((results) => {
+      res.sendStatus(200)
+})
+})
+app.post("/decline", function(req,res){
+  console.log("influencer",req.body.influencer)  
+  console.log("photographer",req.body.photographer)
+  knex("requests")
+  .where({'photographer_id':req.body.photographer, 'influencer_id':req.body.influencer
+}).del().then((results) => {
       res.sendStatus(200)
 })
 
@@ -137,17 +146,26 @@ app.post("/upload",function (req,res){
 
 // })
 
-// app.get("/:id/Photographerrequest", function(req,res){
-//   var id= req.params.id
-//   knex('requests')
-//   .join('photographer', 'requests.id', '=', 'photographer.id')
-//   .where('photographer.id', req.params.id)
-//     .then((results)=> {
-//       res.json(results);
-//     })
+app.get("/:id/influencerrequest", function(req,res){
+  var id= req.params.id
+  knex('photographer').select('photographer.name','photographer.profilepic', 'photographer.id' )
+  .join('requests', 'requests.photographer_id', '=', 'photographer.id').join('influencer', 'requests.influencer_id', '=', 'influencer.id')
+  .where('influencer.id', req.params.id)
+    .then((results)=> {
+      res.json(results);
+    })
 
-// })
-  
+})
+app.get("/:id/photographerrequest", function(req,res){
+  var id= req.params.id
+  knex('photographer').select('influencer.name','influencer.profilepic', 'influencer.id')
+  .join('requests', 'requests.photographer_id', '=', 'photographer.id').join('influencer', 'requests.influencer_id', '=', 'influencer.id')
+  .where('photographer.id', req.params.id)
+    .then((results)=> {
+      res.json(results);
+    })
+
+})
 
 
 app.listen(port);

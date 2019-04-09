@@ -6,51 +6,53 @@ import Navigation from './Navbar.js'
 const axios = require("axios");
 
 class Pending extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state={
-  //     requestmade:[]
-  //   }
-  // }
-  // componentDidMount () {
-  //   var id = this.props.user.id
-  //   var url = '/'+id+'/Influencerrequest'
-
-  //   axios.get(url)
-  //   .then(function (response) {
-  //    this.setState({requestmade:response.data})
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
-
-  //   }
+  constructor(props) {
+    super(props);
+    this.state={
+      requestmade:[],
+      unsplashApi:[]
+    }
+  }
+  componentDidMount () {
+    var id = this.props.user.id
+    var url = '/'+id+'/influencerrequest'
+    fetch(url)
+    .then(results => {
+      return results.json();
+    })
+    .then(data => { this.setState({requestmade:data})
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+      
+    }
 
   render(){
+let request = this.state.requestmade.map(request=> {
+    return (<div className="request-box">
+    <img className="request-photo" src={request.profilepic} />
+    <h4 className="request-name">{request.name}</h4>
+      <span className="pending-buttons">
+    <Button className="request-pending" variant="success" disabled>Pending</Button>
+      </span>
+  </div>)
+})
+
+function onlyUnique(value, index, self) { 
+  return self.indexOf(value) === index;
+}
+let filteredRequest = request.filter( onlyUnique )
 
   return (
   <div>
-  {/* <Navigation/> */}
+  <Navigation user={this.props.user}/>
 
   <Container>
     <Row>
       <Col sm={8}>
       <h1 className="pending-requests">Pending <span className="cursive-requests">Connections</span></h1>
-         <div className="request-box">
-          <img className="request-photo" src="https://images.unsplash.com/profile-1541499455668-3a19737a038c?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" />
-          <h4 className="request-name">Amelia Clarke</h4>
-            <span className="pending-buttons">
-          <Button className="request-pending" variant="success" disabled>Pending</Button>
-            </span>
-        </div>
-
-        <div className="request-box">
-          <img className="request-photo" src="https://images.unsplash.com/profile-1541499455668-3a19737a038c?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" />
-          <h4 className="request-name">Angela Yang</h4>
-            <span className="pending-buttons">
-          <Button className="request-message" variant="success">Message</Button>
-            </span>
-        </div>
+       {filteredRequest}  
       </Col>
 
 

@@ -26,7 +26,7 @@ class App extends Component {
      username:"",
      fireRedirect:false,
      photographerMatch:"",
-     connected:false
+     connected:false,
     };
   }
 
@@ -82,6 +82,30 @@ onClickMessage = ()=>{
      
 }
 
+accept = ()=>{
+  this.setState({
+    connected:true
+  }) 
+     
+}
+
+
+delete = (request,e) =>{
+  this.setState({
+    fireRedirect:true,
+    connected:true
+  }) 
+
+  axios.post("/decline", {
+   influencer:request,
+   photographer:this.state.user.id 
+  }).then((response) => {
+    console.log(response.data)
+  
+})
+}
+
+
   render() {
     return (
 
@@ -89,12 +113,12 @@ onClickMessage = ()=>{
       <Switch>
         <Route path="/" render={(props) => <Home  handleChange={this.handleChange} onLogin={this.onLogin} fireRedirect = {this.state.fireRedirect} user = {this.state.user}/>} exact/>
         <Route path="/select"  component={Select} />
-        <Route path="/reqPhotographer" render={(props)=> <ReqPhotographer onClickMessage={this.onClickMessage} fireRedirect={this.state.fireRedirect} user = {this.state.user}  photographerMatch={this.state.photographerMatch}/>} />
+        <Route path="/reqPhotographer" render={(props)=> <ReqPhotographer connected = {this.state.connected}  onClickMessage={this.onClickMessage} fireRedirect={this.state.fireRedirect} user = {this.state.user}  photographerMatch={this.state.photographerMatch}/>} />
         {/* <Route path="/loading" render={(props) => <Loading user ={this.state.user} />}  /> */}
         <Route path="/upload"render={(props) => <Upload  setRedirectUpload ={this.setRedirectUpload} user = {this.state.user} match={this.state.match} labels={this.state.labels} fireRedirect={this.state.fireRedirect} />} />
         <Route path="/photographer" render={(props) => <Photographer user = {this.state.user}/>} />
-        <Route path="/results" render={(props)=> <Results photographerMatch={this.state.photographerMatch} onClickMatch={this.onClickMatch} />} />
-        <Route path="/requests" render={(props)=> <Requests user = {this.state.user} />}  />
+        <Route path="/results" render={(props)=> <Results connected = {this.state.connected} onClickMessage={this.onClickMessage} user = {this.state.user} photographerMatch={this.state.photographerMatch} onClickMatch={this.onClickMatch} />} />
+        <Route path="/requests" render={(props)=> <Requests onClickMessage={this.onClickMessage} accept={this.accept} delete={this.delete} user = {this.state.user} connected={this.state.connected} />}  />
         <Route path="/pending" render={(props)=> <Pending user = {this.state.user} />}  />
         <Route path="/messages" render={(props)=> <Messages user = {this.state.user} />} />
         <Route component={Error} />

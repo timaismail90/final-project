@@ -3,6 +3,7 @@ import '../requests.css';
 import requestBackground from '../collabrequests.jpg';
 import {Row, Col, Container, Button, Card} from 'react-bootstrap';
 import Navigation from './Navbar.js'
+import { Link } from 'react-router-dom';
 const axios = require("axios");
 
 class Requests extends Component {
@@ -14,20 +15,46 @@ class Requests extends Component {
   }
   componentDidMount () {
     var id = this.props.user.id
-    var url = '/'+id+'/Influencerrequest'
-
-    axios.get(url)
-    .then(function (response) {
-     this.setState({requestmade:response.data})
+    var url = '/'+id+'/photographerrequest'
+    fetch(url)
+    .then(results => {
+      return results.json();
+    })
+    .then(data => { this.setState({requestmade:data})
     })
     .catch(function (error) {
       console.log(error);
     });
-
+      
     }
 
-  render(){
 
+  render(){
+let request = this.state.requestmade.map(request=> {
+  if(this.props.connected){
+    return (
+      <div className="request-box">
+     <img className="request-photo" src={request.profilepic} />
+     <h4 className="request-name">{request.name}</h4>
+     <span className="request-buttons">
+     <Link className="request-accept" variant="success" to="/messages" />
+     </span>
+   </div>)
+
+  } else {
+return (
+   <div className="request-box">
+  <img className="request-photo" src={request.profilepic} />
+  <h4 className="request-name">{request.name}</h4>
+  <span className="request-buttons">
+  <Button className="request-accept" variant="success">Accept</Button>
+  <Button onClick={this.props.delete.bind(this, request.id)}className="request-decline" variant="outline-danger">Decline</Button>
+  </span>
+</div>)
+
+}  
+}
+)
   return (
   <div>
   <Navigation user={this.props.user}/>
@@ -36,35 +63,8 @@ class Requests extends Component {
     <Row>
       <Col sm={8}>
       <h1 className="pending-requests">Pending <span className="cursive-requests">Requests</span></h1>
-         <div className="request-box">
-          <img className="request-photo" src="https://images.unsplash.com/profile-1541499455668-3a19737a038c?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" />
-          <h4 className="request-name">Amelia Clarke</h4>
-            <span className="request-buttons">
-          <Button className="request-accept" variant="success">Accept</Button>
-          <Button className="request-decline" variant="outline-danger">Decline</Button>
-            </span>
-        </div>
-
-        <div className="request-box">
-          <img className="request-photo" src="https://images.unsplash.com/profile-1541499455668-3a19737a038c?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" />
-          <h4 className="request-name">Angela Yang</h4>
-            <span className="request-buttons">
-          <Button className="request-accept" variant="success">Accept</Button>
-          <Button className="request-decline" variant="outline-danger">Decline</Button>
-            </span>
-        </div>
-
-        <div className="request-box">
-          <img className="request-photo" src="https://images.unsplash.com/profile-1541499455668-3a19737a038c?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" />
-          <h4 className="request-name">Anna Karenina</h4>
-            <span className="request-buttons">
-          <Button className="request-accept" variant="success">Accept</Button>
-          <Button className="request-decline" variant="outline-danger">Decline</Button>
-            </span>
-        </div>
+{request}
       </Col>
-
-
       <Col sm={4}>
       <img className="background-requests" src={requestBackground} />
       </Col>

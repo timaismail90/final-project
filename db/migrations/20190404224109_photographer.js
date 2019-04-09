@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
       table.string('name');
       table.string('unsplashAPI');
       table.string('username');
+      table.string('profilepic');
       table.string('type')
     });
   };
