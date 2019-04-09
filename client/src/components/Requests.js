@@ -34,11 +34,7 @@ let request = this.state.requestmade.map(request=> {
   if(this.props.connected){
     return (
       <div className="request-box">
-     <img className="request-photo" src={request.profilepic} />
-     <h4 className="request-name">{request.name}</h4>
-     <span className="request-buttons">
      <Link className="request-accept" variant="success" to="/messages" />
-     </span>
    </div>)
 
   } else {
