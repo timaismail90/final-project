@@ -60,12 +60,12 @@ class Results extends Component {
               this.props.location.state.match.map(photographer =>(
                <Col sm>
               <Card style={{ width: '18rem' }}>
-   
+
                 <Card.Img onClick={this.props.onClickMatch.bind(this, photographer)} variant = "top"
                 src={photographer.profilePhoto}/>
                 <Card.Body>
                   <Card.Text>{photographer.name}</Card.Text>
-                  <Button variant="outline-success">Collab!</Button>
+                  <Button onClick={this.props.onClickMatch.bind(this, photographer)} variant="outline-success">Profile</Button>
                 </Card.Body>
               </Card>
             </Col>))
@@ -74,7 +74,7 @@ class Results extends Component {
         </Container>
       </div>
     </div>)};
-    
+    }
   }
-}
+
 export default  withRouter(Results);

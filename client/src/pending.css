@@ -32,14 +32,14 @@
   border-radius: 10px;
 }
 
-.request-buttons {
+.pending-buttons {
   display: block;
-  margin-left: 70%;
+  margin-left: 80%;
   margin-bottom: 3%;
 }
 
 .request-decline {
-margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .pending-requests {
@@ -53,8 +53,4 @@ margin-left: 1rem;
 
 .cursive-requests {
   font-family: 'Parisienne', cursive !important;
-}
-
-.collab-button {
-  margin-top: 1%;
 }

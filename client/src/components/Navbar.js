@@ -18,9 +18,10 @@ if(this.props.user.type === "influencer"){
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
       <Navbar.Text>
-        <span className="icons"><i class="fas fa-envelope"></i></span>
-       <Link to="/photographer"><span className="icons"><i class="fas fa-user"></i></span></Link>
-        <Link to="/upload"> <span className="icons"><i class="fa fa-upload" aria-hidden="true"></i></span></Link>
+       <span className="icons"><Link to="/photographer"><i class="fas fa-user"></i></Link></span>
+       <span className="icons"><Link to="/upload"><i class="fab fa-searchengin"></i></Link></span>
+       <span className="icons"><Link to="/pending"><i class="fas fa-users"></i></Link></span>
+       <span className="icons"><Link to="/messages"><i class="fas fa-envelope"></i></Link></span>
       </Navbar.Text>
       </Navbar.Collapse>
     </Navbar>
@@ -36,8 +37,9 @@ if(this.props.user.type === "influencer"){
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
       <Navbar.Text>
-        <span className="icons"><i class="fas fa-envelope"></i></span>
-        <Link to="/photographer"><span className="icons"><i class="fas fa-user"></i></span></Link>
+        <span className="icons"><Link to="/photographer"><i class="fas fa-user"></i></Link></span>
+        <span className="icons"><Link to="/requests"><i class="fas fa-users"></i></Link></span>
+        <span className="icons"><Link to="/messages"><i class="fas fa-envelope"></i></Link></span>
       </Navbar.Text>
       </Navbar.Collapse>
     </Navbar>

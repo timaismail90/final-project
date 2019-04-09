@@ -13,7 +13,9 @@ var makebulk = function(photographersList,callback){
         'location':photographersList[photographer].location,
         'profilePhoto':photographersList[photographer].profilePhoto,
         'username':photographersList[photographer].username,
-        'unsplashApi':photographersList[photographer].unsplashApi
+        'unsplashApi':photographersList[photographer].unsplashApi,
+        'id':photographersList[photographer].id,
+
        
       }
     );

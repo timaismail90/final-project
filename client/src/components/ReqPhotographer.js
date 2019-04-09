@@ -16,7 +16,7 @@ class ReqPhotographer extends Component {
     }
 
 
-    
+
 
     componentDidMount () {
         var url = this.props.photographerMatch.unsplashApi
@@ -36,32 +36,49 @@ render(){
     if(this.state.match.length === 0){
         return(
             <h1></h1>
-        ) 
-        
+        )
+
     } else{
-        if(this.props.fireRedirect){
-            return <Redirect to="/requests" />
-         }
+         if(this.props.connected){
         return (
         <div>
-        <Navigation/>
-        <Button onClick={this.props.onClickMessage}>Connect</Button>
-       <div className="photographer-profile">
+        <Navigation user={this.props.user}/>
+        <div className="photographer-profile">
            <img className="profile-photo" src={this.state.match[0].user.profile_image.large} />
            <h1 className="photographer-name">{this.state.match[0].user.name}</h1>
            <h2 className = "photographer-location" > 📍 <span className="location">Toronto</span></h2>
-          </div>
+           <span variant="primary" onClick={this.props.onClickMessage} className="collab-button">Request Sent!</span>
+        </div>
            <Container>
             <Row>
         {photographr}
            </Row>
            </Container>
-           
+
         </div>
 
         )
+         } else{
+         return (
+            <div>
+            <Navigation user={this.props.user}/>
+            <div className="photographer-profile">
+               <img className="profile-photo" src={this.state.match[0].user.profile_image.large} />
+               <h1 className="photographer-name">{this.state.match[0].user.name}</h1>
+               <h2 className = "photographer-location" > 📍 <span className="location">Toronto</span></h2>
+               <Button variant="success" onClick={this.props.onClickMessage} className="collab-button">Send A Request!</Button>
+            </div>
+               <Container>
+                <Row>
+            {photographr}
+               </Row>
+               </Container>
+    
+            </div>
+    
+            )
+}
 }
 }
 }
    export default ReqPhotographer;
-   

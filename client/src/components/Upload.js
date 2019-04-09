@@ -55,7 +55,7 @@ onFormSubmit = (e) =>{
 
   return (
   <div className="upload-page">
-<Navigation/>
+<Navigation user={this.props.user}/>
 <Container>
   <Row>
     <Col sm={4}>

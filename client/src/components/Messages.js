@@ -8,7 +8,7 @@ class Messages extends Component {
   render () {
   return (
   <div>
-  <Navigation/>
+  <Navigation user={this.props.user}/>
   <Container>
   <Row>
     <Col sm={4} className="messages-left">
