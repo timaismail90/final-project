@@ -45,9 +45,7 @@ render(){
         <Navigation user={this.props.user}/>
         <div className="photographer-profile">
            < img className = "profile-photo"
-           src = {this.props.photographerMatch.profilepic
-           }
-           />
+           src = {this.props.photographerMatch.profilepic}/>
            <h1 className="photographer-name">{this.state.match[0].user.name}</h1>
            <h2 className = "photographer-location" > 📍 <span className="location">Toronto</span></h2>
            <span variant="primary" onClick={this.props.onClickMessage} className="collab-button">Request Sent!</span>
