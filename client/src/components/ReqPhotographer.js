@@ -40,7 +40,7 @@ render(){
 
     } else{
         if(this.props.fireRedirect){
-            return <Redirect to="/requests" />
+            return <Redirect to="/pending" />
          }
         return (
         <div>

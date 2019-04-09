@@ -65,10 +65,6 @@ class App extends Component {
   })
 }
 onClickMessage = ()=>{
-<<<<<<< HEAD
-  this.setState({fireRedirect:true})
-
-=======
   this.setState({
     fireRedirect:true,
     connected:true
@@ -84,7 +80,6 @@ onClickMessage = ()=>{
 
 })
      
->>>>>>> pendingrequests
 }
 
   render() {
