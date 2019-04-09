@@ -44,6 +44,7 @@ class Photographer extends React.Component {
            <img className="profile-photo" src={this.props.user.profilepic} />
            <h1 className="photographer-name">{this.state.user[0].user.name}</h1>
            <h2 className = "photographer-location" > 📍 <span className="location">Toronto</span></h2>
+           <h2 className = "photographer-bio" >A cat mom, software engineer, and fashion blogger. Love all things beautiful. Connect with me to collaborate.</h2>
           </div>
            <Container>
             <Row>
