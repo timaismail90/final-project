@@ -29,8 +29,8 @@ class Pending extends Component {
     }
 
   render(){
-let request = this.state.requestmade.map(request=> {
-    if(!this.state.requestmade[0])
+let request = this.state.requestmade.map((request,i) => {
+   
     return (<div className="request-box">
     <img className="request-photo" src={request.profilepic} />
     <h4 className="request-name">{request.name}</h4>

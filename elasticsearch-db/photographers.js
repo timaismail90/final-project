@@ -15,6 +15,8 @@ var makebulk = function(photographersList,callback){
         'username':photographersList[photographer].username,
         'unsplashApi':photographersList[photographer].unsplashApi,
         'id':photographersList[photographer].id,
+        'bio':photographersList[photographer].bio
+
 
        
       }

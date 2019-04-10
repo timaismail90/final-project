@@ -48,6 +48,7 @@ render(){
            src = {this.props.photographerMatch.profilePhoto}/>
            <h1 className="photographer-name">{this.state.match[0].user.name}</h1>
            <h2 className = "photographer-location" > 📍 <span className="location">Toronto</span></h2>
+           <h2 className = "photographer-bio" >{this.props.photographerMatch.bio}</h2>
            <span variant="primary" onClick={this.props.onClickMessage} className="collab-button">Request Sent!</span>
         </div>
            <Container>

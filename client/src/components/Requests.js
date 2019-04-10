@@ -50,7 +50,7 @@ return(
 
 } 
 else{
-  if(!i===0){
+ 
   return (
     <div className="request-box">
    <img className="request-photo" src={request.profilepic} />
@@ -61,8 +61,6 @@ else{
    </span>
  </div>)
   }
-}
-
 }
 )
   return (

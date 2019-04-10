@@ -112,7 +112,7 @@ app.post("/upload",function (req,res){
                             response.hits.hits.forEach( function(hit,i){
                               console.log(average())
                               console.log(response.hits)
-                              if( hit["_score"]> average()){
+                              if( hit["_score"]> Math.round(average())){
                                 array.push(hit["_source"])
                            }
                            })
