@@ -30,6 +30,7 @@ class Pending extends Component {
 
   render(){
 let request = this.state.requestmade.map(request=> {
+    if(!this.state.requestmade[0])
     return (<div className="request-box">
     <img className="request-photo" src={request.profilepic} />
     <h4 className="request-name">{request.name}</h4>
@@ -40,11 +41,6 @@ let request = this.state.requestmade.map(request=> {
   </div>)
 })
 
-function onlyUnique(value, index, self) {
-  return self.indexOf(value) === index;
-}
-let filteredRequest = request.filter( onlyUnique )
-
   return (
   <div>
   <Navigation user={this.props.user}/>
@@ -53,7 +49,7 @@ let filteredRequest = request.filter( onlyUnique )
     <Row>
       <Col sm={8}>
       <h1 className="pending-requests">Pending <span className="cursive-requests">Connections</span></h1>
-       {filteredRequest}
+       {request}
       </Col>
 
 

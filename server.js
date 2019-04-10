@@ -162,7 +162,7 @@ app.post("/upload",function (req,res){
 
 app.get("/:id/influencerrequest", function(req,res){
   var id= req.params.id
-  knex('photographer').select('photographer.name','photographer.profilepic', 'photographer.id' )
+  knex('photographer').select('photographer.name','photographer.profilepic', 'photographer.id', 'photographer.type' )
   .join('requests', 'requests.photographer_id', '=', 'photographer.id').join('influencer', 'requests.influencer_id', '=', 'influencer.id')
   .where('influencer.id', req.params.id)
     .then((results)=> {
@@ -172,7 +172,7 @@ app.get("/:id/influencerrequest", function(req,res){
 })
 app.get("/:id/photographerrequest", function(req,res){
   var id= req.params.id
-  knex('photographer').select('influencer.name','influencer.profilepic', 'influencer.id')
+  knex('photographer').select('influencer.name','influencer.profilepic', 'influencer.id','influencer.type')
   .join('requests', 'requests.photographer_id', '=', 'photographer.id').join('influencer', 'requests.influencer_id', '=', 'influencer.id')
   .where('photographer.id', req.params.id)
     .then((results)=> {

@@ -27,6 +27,7 @@ class App extends Component {
      fireRedirect:false,
      photographerMatch:"",
      connected:false,
+     del:false
     };
   }
 
@@ -93,7 +94,8 @@ accept = ()=>{
 delete = (request,e) =>{
   this.setState({
     fireRedirect:true,
-    connected:true
+    del:true
+ 
   }) 
 
   axios.post("/decline", {
@@ -117,8 +119,8 @@ delete = (request,e) =>{
         {/* <Route path="/loading" render={(props) => <Loading user ={this.state.user} />}  /> */}
         <Route path="/upload"render={(props) => <Upload  setRedirectUpload ={this.setRedirectUpload} user = {this.state.user} match={this.state.match} labels={this.state.labels} fireRedirect={this.state.fireRedirect} />} />
         <Route path="/photographer" render={(props) => <Photographer user = {this.state.user}/>} />
-        <Route path="/results" render={(props)=> <Results connected = {this.state.connected} onClickMessage={this.onClickMessage} user = {this.state.user} photographerMatch={this.state.photographerMatch} onClickMatch={this.onClickMatch} />} />
-        <Route path="/requests" render={(props)=> <Requests onClickMessage={this.onClickMessage} accept={this.accept} delete={this.delete} user = {this.state.user} connected={this.state.connected} />}  />
+        <Route path="/results" render={(props)=> <Results   connected = {this.state.connected} onClickMessage={this.onClickMessage} user = {this.state.user} photographerMatch={this.state.photographerMatch} onClickMatch={this.onClickMatch} />} />
+        <Route path="/requests" render={(props)=> <Requests del = {this.state.del} onClickMessage={this.onClickMessage} accept={this.accept} delete={this.delete} user = {this.state.user} connected={this.state.connected} />}  />
         <Route path="/pending" render={(props)=> <Pending user = {this.state.user} />}  />
         <Route path="/messages" render={(props)=> <Messages user = {this.state.user} />} />
         <Route component={Error} />
