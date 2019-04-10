@@ -24,7 +24,7 @@ class Results extends Component {
   componentDidMount() {
     setTimeout(()=>{
       this.setState({loading:false})
-    }, 5000)
+    }, 8000)
   }
 
 
@@ -59,7 +59,7 @@ class Results extends Component {
             {
               this.props.location.state.match.map(photographer =>(
                <Col sm={6}>
-              <Card className="result-cards" style={{ width: '18rem' }}>
+              <Card className="result-cards" style={{ width: '18rem'}}>
 
                 <Card.Img onClick={this.props.onClickMatch.bind(this, photographer)} variant = "top"
                 src={photographer.profilePhoto}/>

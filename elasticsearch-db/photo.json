@@ -6,16 +6,19 @@
     "id":1,
     "unsplashApi": "https://api.unsplash.com/users/heftiba/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
     "profilePhoto":"https://images.unsplash.com/profile-1510932839800-fa28425a0bc5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop",
-    "username": "heftiba"
+    "username": "heftiba",
+   "bio":"Product | Food | Lifestyle Photographer • Graphic Designer • Social Media Specialist Instagram: @heftiba.co.uk"
+
  },
    {
     "name" : "brenda Godinez",
-    "keyWords":"Food Strawberry Strawberries Cake Dessert Dish Pavlova Cuisine Torte Fruit Ice cream Food Frozen dessert Chocolate syrup Chocolate Dessert Sundae Dairy Cuisine Ingredient Food Cuisine Dish Still life photography Metal Food Cuisine Food Dessert Cuisine Dish Cupcake Cup Frozen dessert Sprinkles Muffin Chocolate Vegetable juice Food Cuisine Health shake Smoothie Superfood Ingredient Plant Dish Drink Floats Food Milkshake Non-alcoholic beverage Smoothie Batida Dessert Ingredient Fizz Sky Vegetation Blue Natural landscape Cloud Beach Sea Tropics Ocean Tree Flower Flowering plant moth orchid Plant Botany Petal Moth Orchid Orchid Plant stem Food Dish Cuisine Dessert Buttercream Icing Cake Cake decorating Frozen dessert Ingredient",
+    "keyWords":"Food Food Food Food Food Food Food Food Food Food Food Food Strawberry Strawberries Cake Dessert Dish Pavlova Cuisine Torte Fruit Ice cream Food Frozen dessert Chocolate syrup Chocolate Dessert Sundae Dairy Cuisine Ingredient Food Cuisine Dish Still life photography Metal Food Cuisine Food Dessert Cuisine Dish Cupcake Cup Frozen dessert Sprinkles Muffin Chocolate Vegetable juice Food Cuisine Health shake Smoothie Superfood Ingredient Plant Dish Drink Floats Food Milkshake Non-alcoholic beverage Smoothie Batida Dessert Ingredient Fizz Sky Vegetation Blue Natural landscape Cloud Beach Sea Tropics Ocean Tree Flower Flowering plant moth orchid Plant Botany Petal Moth Orchid Orchid Plant stem Food Dish Cuisine Dessert Buttercream Icing Cake Cake decorating Frozen dessert Ingredient",
     "location":"montreal",
       "id":2,
       "unsplashApi": "https://api.unsplash.com/users/cravethebenefits/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
       "profilePhoto":"https://images.unsplash.com/profile-1490323661174-682bfb6ce36d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop",
-      "username": "cravethebenefits"
+      "username": "cravethebenefits",
+      "bio": "Food Nerd. Breakfast Lover. Freelance writer, food photographer, & health blogger"
 
    },
 
@@ -26,7 +29,9 @@
       "id":3,
       "unsplashApi": "https://api.unsplash.com/users/edgarraw/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
       "profilePhoto":"https://images.unsplash.com/profile-1511689084658-01d41b7772ff?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop",
-      "username": "edgarraw"
+      "username": "edgarraw",
+      "bio":"A plant based chef that’s passionate about photography and traveling"  
+
     },
 
    {
@@ -36,7 +41,9 @@
       "id":4,
       "unsplashApi": "https://api.unsplash.com/users/iamfbk/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
       "profilePhoto": "https://images.unsplash.com/photo-1481740586420-804cc4418700?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop",
-      "username": "iamfbk"
+      "username": "iamfbk",
+      "bio": "Capturing the art of culinary since 1990 | #food #photography"
+
     },
 
    {
@@ -46,7 +53,9 @@
       "id":5,
       "unsplashApi": "https://api.unsplash.com/users/nate_dumlao/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
       "profilePhoto":"https://images.unsplash.com/profile-1495427732560-fe5248ad6638?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop",
-      "username": "nate_dumlao"
+      "username": "nate_dumlao",
+      "bio":"Brand Consultant and Content Creator. Follow me to be inspired by Mother Nature"
+
     },
 
    {
@@ -56,7 +65,9 @@
       "id":6,
       "unsplashApi": "https://api.unsplash.com/users/priscilladupreez/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
       "profilePhoto": "https://images.unsplash.com/photo-1550433880-9772bc077291?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop",
-      "username": "priscilladupreez"
+      "username": "priscilladupreez",
+      "bio": "Wandering the planet in search of nice things. Portraiture + Nature = Aesthetics"
+
     },
    {
     "name" : "joe robles",
@@ -65,7 +76,9 @@
       "id":7,
       "unsplashApi": "https://api.unsplash.com/users/joerobles/photos/?client_id=b4149a170740ff170861a3eb68bfae06d057557f2f224667f42547a07e1944c8",
       "profilePhoto":"https://images.unsplash.com/profile-fb-1520498473-aaf136c6e369.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop",
-      "username": "joerobles"
+      "username": "joerobles",
+      "bio": "Soul-capturing photography. If you are lost, follow me"
+
     }
 ]
 

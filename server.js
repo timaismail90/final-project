@@ -95,13 +95,25 @@ app.post("/upload",function (req,res){
                          else {
                            console.log("--- Hits ---");
                           var array =[];
-                          var sum = 0
-                          var pointer=0
-                            console.log(response.hits)
-                          response.hits.hits.forEach( function(hit,i){
-                              if( hit["_score"]> 2){
-                              array.push(hit["_source"])
-                              console.log(hit)
+              
+                               function average (){
+                                var sum = 0
+                                var pointer=0
+                                response.hits.hits.forEach( function(hit,i){
+                                 sum += hit["_score"]
+                                 pointer+=1
+                                })
+                              
+                                return sum/pointer
+                              }
+
+                         
+                          
+                            response.hits.hits.forEach( function(hit,i){
+                              console.log(average())
+                              console.log(response.hits)
+                              if( hit["_score"]> Math.round(average())){
+                                array.push(hit["_source"])
                            }
                            })
 
@@ -150,7 +162,7 @@ app.post("/upload",function (req,res){
 
 app.get("/:id/influencerrequest", function(req,res){
   var id= req.params.id
-  knex('photographer').select('photographer.name','photographer.profilepic', 'photographer.id' )
+  knex('photographer').select('photographer.name','photographer.profilepic', 'photographer.id', 'photographer.type' )
   .join('requests', 'requests.photographer_id', '=', 'photographer.id').join('influencer', 'requests.influencer_id', '=', 'influencer.id')
   .where('influencer.id', req.params.id)
     .then((results)=> {
@@ -160,7 +172,7 @@ app.get("/:id/influencerrequest", function(req,res){
 })
 app.get("/:id/photographerrequest", function(req,res){
   var id= req.params.id
-  knex('photographer').select('influencer.name','influencer.profilepic', 'influencer.id')
+  knex('photographer').select('influencer.name','influencer.profilepic', 'influencer.id','influencer.type')
   .join('requests', 'requests.photographer_id', '=', 'photographer.id').join('influencer', 'requests.influencer_id', '=', 'influencer.id')
   .where('photographer.id', req.params.id)
     .then((results)=> {

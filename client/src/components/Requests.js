@@ -30,25 +30,39 @@ class Requests extends Component {
 
 
   render(){
-let request = this.state.requestmade.map(request=> {
+let request = this.state.requestmade.map((request, i) => {
+  
   if(this.props.connected){
     return (
       <div className="request-box">
-     <Link className="request-accept" variant="success" to="/messages" />
-   </div>)
+      <img className="request-photo" src={request.profilepic} />
+      <h4 className="request-name">{request.name}</h4>
+      <span className="request-buttons">
+      <span>Connected!</span>
+      </span>
+    </div>
+    )
 
-  } else {
-return (
-   <div className="request-box">
-  <img className="request-photo" src={request.profilepic} />
-  <h4 className="request-name">{request.name}</h4>
-  <span className="request-buttons">
-  <Button className="request-accept" variant="success">Accept</Button>
-  <Button onClick={this.props.delete.bind(this, request.id)}className="request-decline" variant="outline-danger">Decline</Button>
-  </span>
-</div>)
+  } else if (this.props.del)  {
+return(
+  <div>
+    <h1>No Pending Messages</h1>
+  </div>
+)
 
-}  
+} 
+else{
+ 
+  return (
+    <div className="request-box">
+   <img className="request-photo" src={request.profilepic} />
+   <h4 className="request-name">{request.name}</h4>
+   <span className="request-buttons">
+   <Button onClick={this.props.accept} className="request-accept" variant="success">Accept</Button>
+   <Button onClick={this.props.delete.bind(this, request.id)}className="request-decline" variant="outline-danger">Decline</Button>
+   </span>
+ </div>)
+  }
 }
 )
   return (
