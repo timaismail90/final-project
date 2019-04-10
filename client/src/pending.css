@@ -6,8 +6,10 @@
 
 .request-photo {
   border-radius: 50%;
-  width: 80px;
-  margin-top: 2%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-top: 5%;
   margin-bottom: 2%;
   margin-left: 5%;
   margin-right: 5%;
@@ -52,5 +54,6 @@
 }
 
 .cursive-requests {
-  font-family: 'Parisienne', cursive !important;
+   font-family: 'Cormorant SC', serif;
+  font-weight: 700;
 }

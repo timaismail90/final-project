@@ -12,7 +12,8 @@
 }
 
 .styles {
-   font-family: 'Parisienne', cursive !important;
+    font-family: 'Cormorant SC', serif;
+  font-weight: 700;
    text-decoration: underline;
 }
 .file-upload {

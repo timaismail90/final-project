@@ -52,7 +52,8 @@ margin-left: 1rem;
 }
 
 .cursive-requests {
-  font-family: 'Parisienne', cursive !important;
+  font-family: 'Cormorant SC', serif;
+  font-weight: 700;
 }
 
 .collab-button {

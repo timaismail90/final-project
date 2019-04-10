@@ -6,8 +6,10 @@
 }
 
 .profile-photo {
+  object-fit: cover;
   border-radius: 50%;
   width: 150px;
+  height: 150px;
   margin-top: 5%;
   margin-bottom: 2%;
 }

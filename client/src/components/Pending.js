@@ -25,7 +25,7 @@ class Pending extends Component {
     .catch(function (error) {
       console.log(error);
     });
-      
+
     }
 
   render(){
@@ -33,13 +33,14 @@ let request = this.state.requestmade.map(request=> {
     return (<div className="request-box">
     <img className="request-photo" src={request.profilepic} />
     <h4 className="request-name">{request.name}</h4>
+    <h2 className = "photographer-bio" >{request.bio}</h2>
       <span className="pending-buttons">
     <Button className="request-pending" variant="success" disabled>Pending</Button>
       </span>
   </div>)
 })
 
-function onlyUnique(value, index, self) { 
+function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
 let filteredRequest = request.filter( onlyUnique )
@@ -52,7 +53,7 @@ let filteredRequest = request.filter( onlyUnique )
     <Row>
       <Col sm={8}>
       <h1 className="pending-requests">Pending <span className="cursive-requests">Connections</span></h1>
-       {filteredRequest}  
+       {filteredRequest}
       </Col>
 
 
