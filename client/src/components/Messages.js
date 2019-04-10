@@ -8,10 +8,10 @@ function Chat (props){
   return ( 
     <div>
     <div className="influencer-section">
-    <h4 className="message-photographer">Hey! Loving your portfolio.</h4>
+    <h4 className="message-photographer">Start chatting with Joe!</h4>
   </div>
   <div className="photographer-section">
-  <h4 className="message-influencer">Thanks. Let's collab!</h4>
+
   </div>
   </div>)
 
@@ -19,10 +19,9 @@ function Chat (props){
   return ( 
     <div>
     <div className="influencer-section">
-    <h4 className="message-influencer">Hey! Loving your portfolio.</h4>
+    <h4 className="message-influencer">Start chatting with Eloise</h4>
   </div>
   <div className="photographer-section">
-  <h4 className="message-photographer">Thanks. Let's collab!</h4>
   </div>
   </div>)
 

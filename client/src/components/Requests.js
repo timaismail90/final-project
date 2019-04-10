@@ -35,11 +35,13 @@ let request = this.state.requestmade.map((request, i) => {
   if(this.props.connected){
     return (
       <div className="request-box">
-      <button variant="success">
-      <a href="http://localhost:3000/messages">Messages</a>
-      </button>
-    
-   </div>)
+      <img className="request-photo" src={request.profilepic} />
+      <h4 className="request-name">{request.name}</h4>
+      <span className="request-buttons">
+      <span>Connected!</span>
+      </span>
+    </div>
+    )
 
   } else if (this.props.del)  {
 return(
