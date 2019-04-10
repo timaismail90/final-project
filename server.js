@@ -95,13 +95,25 @@ app.post("/upload",function (req,res){
                          else {
                            console.log("--- Hits ---");
                           var array =[];
-                          var sum = 0
-                          var pointer=0
-                            console.log(response.hits)
-                          response.hits.hits.forEach( function(hit,i){
-                              if( hit["_score"]> 2){
-                              array.push(hit["_source"])
-                              console.log(hit)
+              
+                               function average (){
+                                var sum = 0
+                                var pointer=0
+                                response.hits.hits.forEach( function(hit,i){
+                                 sum += hit["_score"]
+                                 pointer+=1
+                                })
+                              
+                                return sum/pointer
+                              }
+
+                         
+                          
+                            response.hits.hits.forEach( function(hit,i){
+                              console.log(average())
+                              console.log(response.hits)
+                              if( hit["_score"]> average()){
+                                array.push(hit["_source"])
                            }
                            })
 
