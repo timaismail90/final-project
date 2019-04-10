@@ -58,8 +58,8 @@ class Results extends Component {
           <Row>
             {
               this.props.location.state.match.map(photographer =>(
-               <Col sm>
-              <Card style={{ width: '18rem' }}>
+               <Col sm={6}>
+              <Card className="result-cards" style={{ width: '18rem' }}>
 
                 <Card.Img onClick={this.props.onClickMatch.bind(this, photographer)} variant = "top"
                 src={photographer.profilePhoto}/>
