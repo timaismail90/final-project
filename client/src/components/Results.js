@@ -24,7 +24,7 @@ class Results extends Component {
   componentDidMount() {
     setTimeout(()=>{
       this.setState({loading:false})
-    }, 8000)
+    }, 20000)
   }
 
 
